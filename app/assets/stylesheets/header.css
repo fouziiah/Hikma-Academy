@@ -1,0 +1,49 @@
+li, a {
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2a2b2c;
+}
+
+.logo {
+    cursor: pointer;
+    width: 200px;
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav-links li .custom-link {
+    transition: all 0.3s ease 0s;
+}
+
+.nav-links li .custom-link:hover {
+    color: #C48B39
+}
+
+button {
+    padding: 9px 25px;
+    color: white;
+    background-color: rgba(196, 139, 57, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+button:hover {
+    background-color: rgba(196, 139, 57, 0.7);
+}
