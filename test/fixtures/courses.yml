@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  teacher: MyString
+  description: MyText
+  status: MyString
+  capacity: MyString
+  start_date: 2024-01-16
+  end_date: 2024-01-16
+  location: MyString
+  type: 
+  string: MyString
+  format: MyString
+  payment_type: MyString
+  user: one
+  child: one
+
+two:
+  name: MyString
+  teacher: MyString
+  description: MyText
+  status: MyString
+  capacity: MyString
+  start_date: 2024-01-16
+  end_date: 2024-01-16
+  location: MyString
+  type: 
+  string: MyString
+  format: MyString
+  payment_type: MyString
+  user: two
+  child: two
