@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_16_165414) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_16_200132) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,25 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_16_165414) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_children_on_user_id"
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string "name"
+    t.string "teacher"
+    t.text "description"
+    t.string "capacity"
+    t.date "start_date"
+    t.date "end_date"
+    t.string "location"
+    t.string "type"
+    t.string "format"
+    t.string "payment_type"
+    t.bigint "user_id", null: false
+    t.bigint "child_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["child_id"], name: "index_courses_on_child_id"
+    t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -54,5 +73,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_16_165414) do
   end
 
   add_foreign_key "children", "users"
+  add_foreign_key "courses", "children"
+  add_foreign_key "courses", "users"
   add_foreign_key "users", "roles"
 end
