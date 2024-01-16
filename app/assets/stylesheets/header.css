@@ -1,7 +1,7 @@
 li, a {
     font-weight: 500;
     font-size: 16px;
-    color: white;
+    color: rgb(190, 30, 30);
     text-decoration: none;
 }
 
@@ -45,6 +45,7 @@ button {
     cursor: pointer;
     transition: all 0.3s ease 0s;
 }
+
 button:hover {
     background-color: rgba(197, 53, 66, 0.8);
 }

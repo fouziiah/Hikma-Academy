@@ -1,10 +1,14 @@
 <header>
+    <a href="<%= root_path %>">
     <img class="logo" src="<%= asset_path('hikma_PrimaryHorizontal.png') %>" alt="logo">
+    </a>
     <ul class="nav-links">
-        <li><%= link_to 'Home', root_path, class: 'custom-link' %></li>
-        <li><%= link_to 'Courses', root_path, class: 'custom-link' %></li>
+        <li><%= link_to 'Courses', courses_path, class: 'custom-link' %></li>
         <li><%= link_to 'About', root_path, class: 'custom-link' %></li>
         <li><%= link_to 'Student Experience', root_path, class: 'custom-link' %></li>
+    <a href="<%= root_path %>">
+    <img class="cart" src="<%= asset_path('cart.png') %>" alt="cart">
+    </a>
         <% if user_signed_in? %>
             <li>
                  <%= button_to 'Sign Out', destroy_user_session_path, method: :delete %>
