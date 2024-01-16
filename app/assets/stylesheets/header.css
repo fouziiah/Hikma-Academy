@@ -9,7 +9,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #2a2b2c;
+    background-color: #DDBA88;
 }
 
 .logo {
@@ -29,21 +29,22 @@ header {
 
 .nav-links li .custom-link {
     transition: all 0.3s ease 0s;
+    color: black;
 }
 
 .nav-links li .custom-link:hover {
-    color: #C48B39
+    color: rgb(190, 30, 30);
 }
 
 button {
     padding: 9px 25px;
     color: white;
-    background-color: rgba(196, 139, 57, 1);
+    background-color: rgba(190, 30, 30, 1);
     border: none;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
 }
 button:hover {
-    background-color: rgba(196, 139, 57, 0.7);
+    background-color: rgba(197, 53, 66, 0.8);
 }
