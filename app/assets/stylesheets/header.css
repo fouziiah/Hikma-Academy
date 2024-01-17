@@ -20,6 +20,7 @@ header {
 
 .nav-links {
     list-style: none;
+    position: relative;
 }
 
 .nav-links li {
@@ -48,4 +49,11 @@ button {
 
 button:hover {
     background-color: rgba(197, 53, 66, 0.8);
+}
+
+.nav-links li img.cart {
+    vertical-align: middle; 
+    padding-top: 5px; 
+    position: relative;
+    bottom: 4.2px;
 }
