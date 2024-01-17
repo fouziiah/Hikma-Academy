@@ -1,7 +1,7 @@
 li, a {
     font-weight: 500;
     font-size: 16px;
-    color: rgb(190, 30, 30);
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
@@ -9,7 +9,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #DDBA88;
+    background: linear-gradient(
+        to right,
+        #FFFFFF 0%,
+        #C48B39  100%,
+        #C48B39 40%,
+        #BE1E1E 75%,
+        #000000 112%
+    );
 }
 
 .logo {
@@ -30,7 +37,7 @@ header {
 
 .nav-links li .custom-link {
     transition: all 0.3s ease 0s;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .nav-links li .custom-link:hover {

@@ -1,0 +1,47 @@
+.welcome-message {
+    color: white; 
+    padding: 130px 20px;
+    text-align: center; 
+      background: linear-gradient(
+        to right, 
+        #000000 0%,    
+        #BE1E1E 33%,   
+        #C48B39 66%,   
+        #FFFFFF 100%   
+  );
+    
+  }
+  
+  .welcome-message h1 {
+    font-size: 3rem; 
+    margin-bottom: 0.5em;
+  }
+  
+  .welcome-message .quote {
+    font-style: italic;
+    margin-bottom: 0.5em;
+  }
+  
+  .welcome-message .prophet {
+    margin-bottom: 0.5em;
+  }
+  
+
+  .bottom-slant {
+    width: 100%;
+    height: 85px; 
+    background-image: url('https://assets-global.website-files.com/62b9c0178a422d31de6277ab/62b9cb8fc66c77c60fd4c35f_faded-slant-bottom%201.png');
+    background-position: 0 0;
+    background-size: cover;
+    padding: 1.7rem 0;
+    position: absolute;
+    bottom: 16.8em;
+
+  }
+  
+
+  .second-header-msg{
+    margin-top: 70px;
+    text-align: center;
+    font-size: 2.3rem;
+  }
