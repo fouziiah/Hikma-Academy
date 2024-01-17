@@ -52,8 +52,8 @@
   </div>
 
   <div>
-    <%= form.label :type, style: "display: block" %>
-    <%= form.text_field :type %>
+    <%= form.label :course_type, style: "display: block" %>
+    <%= form.text_field :course_type %>
   </div>
 
   <div>
@@ -67,13 +67,8 @@
   </div>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div>
-    <%= form.label :child_id, style: "display: block" %>
-    <%= form.text_field :child_id %>
+    <% form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id, value:current_user.id, type: :hidden %>
   </div>
 
   <div>
