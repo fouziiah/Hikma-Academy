@@ -9,14 +9,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(
-        to right,
-        #FFFFFF 0%,
-        #C48B39  100%,
-        #C48B39 40%,
-        #BE1E1E 75%,
-        #000000 112%
-    );
+    background-color: #FFFFFF;
 }
 
 .logo {
@@ -37,11 +30,11 @@ header {
 
 .nav-links li .custom-link {
     transition: all 0.3s ease 0s;
-    color: rgb(255, 255, 255);
+    color: #000000;
 }
 
 .nav-links li .custom-link:hover {
-    color: rgb(190, 30, 30);
+    color: #C48B39;
 }
 
 button {
@@ -64,3 +57,18 @@ button:hover {
     position: relative;
     bottom: 4.2px;
 }
+
+.donate-button{
+    background-color: white;
+    border: solid 2px rgba(190, 30, 30, 1);
+    color: #000000;
+    cursor: pointer; 
+    padding: 5.6px 20px;
+    border-radius: 50px;
+
+}
+
+.donate-button:hover{
+    
+}
+

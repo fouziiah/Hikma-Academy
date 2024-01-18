@@ -3,14 +3,22 @@
     <img class="logo" src="<%= asset_path('hikma_PrimaryHorizontal.png') %>" alt="logo">
     </a>
     <ul class="nav-links">
-        <li><%= link_to 'Courses', courses_path, class: 'custom-link' %></li>
         <li><%= link_to 'About', root_path, class: 'custom-link' %></li>
+
+        <li><%= link_to 'Courses', courses_path, class: 'custom-link' %></li>
+
         <li><%= link_to 'Student Experience', studentxp_index_path, class: 'custom-link' %></li>
+
         <li>
             <a href="<%= root_path %>">
             <img class="cart" src="<%= asset_path('cart.png') %>" alt="cart">
             </a>
         </li>
+
+        <li>
+            <%= link_to 'Donate', 'https://donorbox.org/support-hikma-academy', class: "donate-button" %>
+        </li>
+
         <% if user_signed_in? %>
             <li>
                  <%= button_to 'Sign Out', destroy_user_session_path, method: :delete %>

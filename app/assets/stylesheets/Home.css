@@ -2,13 +2,7 @@
     color: white; 
     padding: 130px 20px;
     text-align: center; 
-      background: linear-gradient(
-        to right, 
-        #000000 0%,    
-        #BE1E1E 33%,   
-        #C48B39 66%,   
-        #FFFFFF 100%   
-  );
+      background-color: #C48B39;
     
   }
   
@@ -27,21 +21,60 @@
   }
   
 
-  .bottom-slant {
-    width: 100%;
-    height: 85px; 
-    background-image: url('https://assets-global.website-files.com/62b9c0178a422d31de6277ab/62b9cb8fc66c77c60fd4c35f_faded-slant-bottom%201.png');
-    background-position: 0 0;
-    background-size: cover;
-    padding: 1.7rem 0;
-    position: absolute;
-    bottom: 16.8em;
-
-  }
-  
-
   .second-header-msg{
     margin-top: 70px;
     text-align: center;
     font-size: 2.3rem;
   }
+
+  /* ..................................Highlights................................... */
+
+  
+  .highlights {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    margin: 2rem auto;
+    max-width: 50em;
+    height: 23em;
+    position: relative;
+  }
+  
+  .highlights > div {
+    flex: 1;
+    background-color: #FFFFFF;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .highlights > div:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  
+  .highlights h2 {
+    text-align: center;
+    margin-bottom: 1rem; 
+  }
+  
+  .highlights p {
+    text-align: center;
+    margin-bottom: 1rem; 
+    line-height: 1.6;
+  }
+  
+
+  .highlights .Parents-card {
+    color: black;
+  }
+  
+  .highlights a.learn-more {
+    color: #BE1E1E;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+  }
+  
