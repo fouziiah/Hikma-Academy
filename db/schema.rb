@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_17_205722) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_18_204026) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_17_205722) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "carts", force: :cascade do |t|
+    t.decimal "total"
+    t.boolean "payment_status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "carts_products", id: false, force: :cascade do |t|
+    t.bigint "cart_id", null: false
+    t.bigint "product_id", null: false
+  end
+
   create_table "children", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -70,6 +82,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_17_205722) do
     t.integer "status", default: 0
     t.index ["child_id"], name: "index_courses_on_child_id"
     t.index ["user_id"], name: "index_courses_on_user_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.decimal "price"
+    t.integer "course_id"
+    t.string "payment_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "roles", force: :cascade do |t|
