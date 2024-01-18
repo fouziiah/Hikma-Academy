@@ -4,8 +4,11 @@
     </a>
     <ul class="nav-links">
         <li><%= link_to 'About', root_path, class: 'custom-link' %></li>
+
         <li><%= link_to 'Courses', courses_path, class: 'custom-link' %></li>
-        <li><%= link_to 'Student Experience', root_path, class: 'custom-link' %></li>
+
+        <li><%= link_to 'Student Experience', studentxp_index_path, class: 'custom-link' %></li>
+
         <li>
             <a href="<%= root_path %>">
             <img class="cart" src="<%= asset_path('cart.png') %>" alt="cart">
