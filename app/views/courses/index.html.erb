@@ -2,13 +2,22 @@
 
 <h1>Courses</h1>
 
-<div id="courses">
-  <% @courses.each do |course| %>
-    <%= render course %>
-    <p>
-      <%= link_to "Show this course", course %>
-    </p>
-  <% end %>
+<div id="courses", class="course-container">
+    <% @courses.each do |course| %>
+      <div class="card">
+        <% if course.image.attached? %>
+          <%= link_to(course_path(course)) do %>
+            <%= image_tag(course.image, class: 'img') %>
+          <% end %>
+        <% end %>
+
+        <div class="intro">
+          <h1 class="title" ><%= course.name %></h1>
+          <p class="body" >Description: <%= course.description %></p> 
+        </div>
+      </div>
+    <% end %>
 </div>
 
+<br><br>
 <%= link_to "New course", new_course_path %>

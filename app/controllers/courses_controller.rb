@@ -4,7 +4,6 @@ class CoursesController < ApplicationController
   # GET /courses or /courses.json
   def index
     @courses = Course.all
-    console
   end
 
   # GET /courses/1 or /courses/1.json
@@ -66,6 +65,6 @@ class CoursesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def course_params
-      params.require(:course).permit(:name, :teacher, :description, :status, :capacity, :start_date, :end_date, :location, :course_type, :format, :payment_type, :user_id)
+      params.require(:course).permit(:name, :teacher, :description, :status, :capacity, :start_date, :end_date, :location, :course_type, :format, :payment_type, :user_id, :image)
     end
 end
