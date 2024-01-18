@@ -8,11 +8,11 @@ class CreateCourses < ActiveRecord::Migration[7.1]
       t.date :start_date
       t.date :end_date
       t.string :location
-      t.string :type
+      t.string :course_type
       t.string :format
       t.string :payment_type
       t.references :user, null: false, foreign_key: true
-      t.references :child, null: false, foreign_key: true
+      t.references :child, foreign_key: true
 
       t.timestamps
     end
