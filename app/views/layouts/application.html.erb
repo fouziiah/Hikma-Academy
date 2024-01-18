@@ -9,8 +9,10 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= stylesheet_link_tag "header.css" %>
-    <head><%= stylesheet_link_tag 'about.css' %></head>
-
+   <%= stylesheet_link_tag 'about.css' %>
+   <%= stylesheet_link_tag "footer.css" %>
+    <%= stylesheet_link_tag "studentxp.css" %>
+    <%= stylesheet_link_tag "Home.css" %>
   </head>
 
   <body>
@@ -20,5 +22,6 @@
       <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
+    <%= render 'home/footer' %> 
   </body>
 </html>

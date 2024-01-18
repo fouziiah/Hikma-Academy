@@ -1,7 +1,7 @@
 li, a {
     font-weight: 500;
     font-size: 16px;
-    color: rgb(190, 30, 30);
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
@@ -9,7 +9,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #DDBA88;
+    background-color: #FFFFFF;
 }
 
 .logo {
@@ -20,6 +20,7 @@ header {
 
 .nav-links {
     list-style: none;
+    position: relative;
 }
 
 .nav-links li {
@@ -29,11 +30,11 @@ header {
 
 .nav-links li .custom-link {
     transition: all 0.3s ease 0s;
-    color: black;
+    color: #000000;
 }
 
 .nav-links li .custom-link:hover {
-    color: rgb(190, 30, 30);
+    color: #C48B39;
 }
 
 button {
@@ -49,3 +50,25 @@ button {
 button:hover {
     background-color: rgba(197, 53, 66, 0.8);
 }
+
+.nav-links li img.cart {
+    vertical-align: middle; 
+    padding-top: 5px; 
+    position: relative;
+    bottom: 4.2px;
+}
+
+.donate-button{
+    background-color: white;
+    border: solid 2px rgba(190, 30, 30, 1);
+    color: #000000;
+    cursor: pointer; 
+    padding: 5.6px 20px;
+    border-radius: 50px;
+
+}
+
+.donate-button:hover{
+    
+}
+

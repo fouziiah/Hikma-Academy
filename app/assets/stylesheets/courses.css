@@ -1,0 +1,39 @@
+
+body.course-page {
+
+}
+
+.course-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.img{
+    height: 350px;
+    width: 300px
+}
+
+.card {
+    height: 350px;
+    min-width: 235px;
+    margin: 50px;
+    box-shadow: 5px 5px 15px black;
+    border-radius: .3rem;
+    overflow: hidden;
+}
+
+.intro {
+    height: 350px;
+    width: 235px;
+    padding: 6px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 215px;
+    background: rgb(27, 27, 27, .5);
+    color: white;
+}
+
+
+
