@@ -1,22 +1,23 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Courses</h1>
-
 <div id="courses", class="course-container">
-    <% @courses.each do |course| %>
-      <div class="card">
-        <% if course.image.attached? %>
-          <%= link_to(course_path(course)) do %>
-            <%= image_tag(course.image, class: 'img') %>
-          <% end %>
+  <% @courses.sort_by(&:name).each do |course| %>
+    <div class="card">
+      <% if course.image.attached? %>
+        <%= link_to(course_path(course)) do %>
+          <%= image_tag(course.image, class: 'img') %>
         <% end %>
+      <% end %>
 
-        <div class="intro">
-          <h1 class="title" ><%= course.name %></h1>
-          <p class="body" >Description: <%= course.description %></p> 
-        </div>
+      <div class="tags">
+        <span class="tag"><%= course.course_type %></span>
+        <span class="tag"><%= course.format %></span>
+        <span class="tag"><%= course.payment_type %></span>
+        <span class="tag"><%= course.status %></span>
       </div>
-    <% end %>
+      <hr>
+      <div class="name"><%= course.name %></div>
+      <p class="p">Description: <%= course.description %></p>
+    </div>
+  <% end %>
 </div>
 
 <br><br>
