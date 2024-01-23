@@ -26,57 +26,60 @@ body.course-page {
 }
 
 .card {
-    /* Change background color */
-    background-color: white;
-  
-    /* Add border */
-    border: 1px solid #C48B39;
-  
-    /* Add space between the border and the content */
-    padding: 8px;
-  
-    border-radius: 12px;
+  /* Change background color */
+  background-color: white;
 
-    margin: 20px;
+  /* Add border */
+  border: 1px solid #C48B39;
 
-    width: 300px;
-    height: 400px;
+  /* Add space between the border and the content */
+  padding: 8px;
 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    transition: box-shadow 0.3s ease-in-out;
-  }
-  
-  .card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
+  border-radius: 12px;
+
+  margin: 20px;
+
+  width: 300px;
+  height: 400px;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 
 /* Style div elements that have class equal to tag */
 .tag {
-    padding: 4px 8px;
-    border: 1px solid #C48B39;
-  
-    border-radius: 50px;
-    font-size: 12px;
-    font-weight: 600;
-    color: white;
-    background-color: #C48B39;
-  }
-  
-  /* Style div elements that have class equal to name */
-  .name {
-    font-size: 24px;
-    font-weight: 600;
-  
-    margin-top: 16px;
-  }
-  
-  /* Style p element */
-  .p {
-    font-size: 14px;
-    color: #7f8c9b;
-    line-height: 150%;
-  }
+  padding: 4px 8px;
+  border: 1px solid #C48B39;
 
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  background-color: #C48B39;
+}
+  
+/* Style div elements that have class equal to name */
+.name {
+  font-size: 24px;
+  font-weight: 600;
 
+  margin-top: 16px;
+}
+
+/* Style p element */
+.p {
+  font-size: 14px;
+  color: #7f8c9b;
+  line-height: 150%;
+}
+
+.tags {
+  display: flex;
+  justify-content: space-around;
+}
 

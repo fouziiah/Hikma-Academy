@@ -1,24 +1,23 @@
 <div id="courses", class="course-container">
-    <% @courses.each do |course| %>
-      <div class="card">
-        <% if course.image.attached? %>
-          <%= link_to(course_path(course)) do %>
-            <%= image_tag(course.image, class: 'img') %>
-          <% end %>
+  <% @courses.sort_by(&:name).each do |course| %>
+    <div class="card">
+      <% if course.image.attached? %>
+        <%= link_to(course_path(course)) do %>
+          <%= image_tag(course.image, class: 'img') %>
         <% end %>
+      <% end %>
 
-        
-        <span class="tag">Regular</span>
-        
-        <span class="tag">Online</span>
-
+      <div class="tags">
+        <span class="tag"><%= course.course_type %></span>
+        <span class="tag"><%= course.format %></span>
+        <span class="tag"><%= course.payment_type %></span>
         <span class="tag"><%= course.status %></span>
-
-        <div class="name" ><%= course.name %></div>
-        <p class="p" >Description: <%= course.description %></p> 
-
       </div>
-    <% end %>
+      <hr>
+      <div class="name"><%= course.name %></div>
+      <p class="p">Description: <%= course.description %></p>
+    </div>
+  <% end %>
 </div>
 
 <br><br>

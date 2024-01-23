@@ -53,17 +53,17 @@
 
   <div>
     <%= form.label :course_type, style: "display: block" %>
-    <%= form.text_field :course_type %>
+    <%= form.select :course_type, Course.course_types.keys %>
   </div>
 
   <div>
     <%= form.label :format, style: "display: block" %>
-    <%= form.text_field :format %>
+    <%= form.select :format, Course.formats.keys %>
   </div>
 
   <div>
     <%= form.label :payment_type, style: "display: block" %>
-    <%= form.text_field :payment_type %>
+    <%= form.select :payment_type, Course.payment_types.keys %>
   </div>
 
   <div>
