@@ -1,0 +1,73 @@
+.dash-cont {
+    display: flex;
+    height: 100vh; 
+}
+
+.aside {
+    width: 250px; 
+    flex-shrink: 0; 
+    background-color: #333;
+    color: white;
+
+}
+
+.main-content {
+    width: 78em;
+    background-color: #ba5151; 
+    padding-left: 20px; 
+    
+}
+
+.dashboard h4 {
+    padding: 20px;
+    margin: 0;
+    background-color: #444; 
+    text-align: center;
+}
+
+.nav-list {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item a {
+    display: block; 
+    padding: 15px 20px;
+    color: white; 
+    text-decoration: none; 
+    transition: background-color 0.3s; 
+}
+
+.nav-item a:hover {
+    background-color: #555; 
+}
+
+.courses-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.course-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    background-color: #eaeaea;
+    border-bottom: 1px solid #ddd;
+}
+
+.courses {
+    display: none; 
+}

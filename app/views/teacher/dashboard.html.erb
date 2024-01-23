@@ -1,0 +1,27 @@
+<div class="dash-cont">
+<div class="aside">
+    <div class="dashboard">
+        <h4>Dashboard</h4>
+    </div>
+    <ul class="nav-list">
+        <li class="nav-item"><a href="#">Student</a></li>
+        <li class="nav-item"><a href="#">Assign</a></li>
+    </ul>
+</div>
+
+
+<div class="main-content">
+  <h1>Teacher Dashboard</h1>
+  <% if @courses.any? %>
+    <h2>Your Courses</h2>
+    <div class="courses-container">
+      <% @courses.each do |course| %>
+        <div class="course-card">
+          <h3><%= course.name %></h3>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>You have no courses assigned.</p>
+  <% end %>
+</div>

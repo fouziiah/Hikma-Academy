@@ -6,4 +6,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable
+  
+  def is_teacher?
+    roles.exists?(name: 'teacher')
+  end 
 end

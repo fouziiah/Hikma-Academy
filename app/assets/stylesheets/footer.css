@@ -3,7 +3,6 @@
   .footer-logo img{
     width: 300px;
     height: auto;
-    margin-right: 73em;
   }
 
   .site-footer {
@@ -11,6 +10,7 @@
     color: #333;
     padding: 2px 0;
     text-align: center;
+  
   }
   
   .footer-content {
@@ -76,4 +76,4 @@
   .footer-copyright p{
     margin: 0.25rem 0;
     line-height: 1.2;
-  }
+  } 
