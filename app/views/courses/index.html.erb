@@ -1,7 +1,3 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Courses</h1>
-
 <div id="courses", class="course-container">
     <% @courses.each do |course| %>
       <div class="card">
@@ -11,10 +7,16 @@
           <% end %>
         <% end %>
 
-        <div class="intro">
-          <h1 class="title" ><%= course.name %></h1>
-          <p class="body" >Description: <%= course.description %></p> 
-        </div>
+        
+        <span class="tag">Regular</span>
+        
+        <span class="tag">Online</span>
+
+        <span class="tag"><%= course.status %></span>
+
+        <div class="name" ><%= course.name %></div>
+        <p class="p" >Description: <%= course.description %></p> 
+
       </div>
     <% end %>
 </div>
