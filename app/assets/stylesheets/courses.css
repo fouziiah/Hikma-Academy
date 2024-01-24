@@ -9,7 +9,6 @@ body.course-page {
     align-items: center;
     margin: 0 auto;
     margin-top: 10vh;
-
     padding: 10vh;
 }
 
@@ -21,6 +20,7 @@ body.course-page {
 }
 
 .card {
+
   overflow: hidden;
   background-color: white;
   border: 1px solid #C48B39;
@@ -54,9 +54,9 @@ body.course-page {
 .name {
   font-size: 24px;
   font-weight: 600;
-
   margin-top: 16px;
 }
+
 
 
 .p {
