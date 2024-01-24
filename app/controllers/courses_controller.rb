@@ -25,6 +25,8 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.save
+        save_course_to_products(@course)
+        
         format.html { redirect_to course_url(@course), notice: "Course was successfully created." }
         format.json { render :show, status: :created, location: @course }
       else
@@ -65,6 +67,43 @@ class CoursesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def course_params
-      params.require(:course).permit(:name, :teacher, :description, :status, :capacity, :start_date, :end_date, :location, :course_type, :format, :payment_type, :user_id, :image)
+      params.require(:course).permit(:name, :teacher, :description, :status, :capacity, :start_date, :end_date, :location, :course_type, :format, :payment_type, :user_id, :image, :price)
+    end
+
+    # Save course information to the products table and create the product in Stripe
+    def save_course_to_products(course)
+      @product = Product.new(name: course.name, price: course.price)
+    
+      # Save the product to your local database
+      if @product.save
+        # Create the same product in Stripe
+        create_product_in_stripe(@product)
+      else
+        Rails.logger.error("Error saving product: #{@product.errors.full_messages}")
+      end
+    end
+    
+    def create_product_in_stripe(product)
+      Stripe.api_key = ENV['STRIPE_SECRET_KEY']
+    
+      # Use the Stripe gem to create a product in Stripe
+      stripe_product = Stripe::Product.create({
+        name: product.name,
+        type: 'good', # You can adjust this based on your product type
+      })
+    
+      # Create a price for the product
+      stripe_price = Stripe::Price.create({
+        product: stripe_product.id,
+        unit_amount: product.price * 100, # Stripe uses cents, so multiply by 100
+        currency: 'usd', # Adjust the currency as needed
+      })
+    
+      # Update your local product with Stripe information
+      if @product.update(stripe_product_id: stripe_product.id, stripe_price_id: stripe_price.id)
+        Rails.logger.info("Product created in Stripe successfully.")
+      else
+        Rails.logger.error("Error updating product with Stripe information: #{product.errors.full_messages}")
+      end
     end
 end
