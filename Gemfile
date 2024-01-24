@@ -69,3 +69,6 @@ group :test do
   gem "selenium-webdriver"
 end
 
+# For stripe
+gem "stripe"
+gem 'dotenv-rails'
