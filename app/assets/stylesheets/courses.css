@@ -1,4 +1,3 @@
-
 body.course-page {
     background-color: #C48B39;
 }
@@ -8,13 +7,8 @@ body.course-page {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-
-    /* Center the container in middle on horizontal axis */
     margin: 0 auto;
-  
-    /* Add empty space above the container (20% of the view height) */
     margin-top: 10vh;
-
     padding: 10vh;
 }
 
@@ -26,22 +20,15 @@ body.course-page {
 }
 
 .card {
-  /* Change background color */
+
+  overflow: hidden;
   background-color: white;
-
-  /* Add border */
   border: 1px solid #C48B39;
-
-  /* Add space between the border and the content */
   padding: 8px;
-
   border-radius: 12px;
-
   margin: 20px;
-
   width: 300px;
   height: 400px;
-
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   transition: box-shadow 0.3s ease-in-out;
@@ -51,7 +38,7 @@ body.course-page {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Style div elements that have class equal to tag */
+
 .tag {
   padding: 4px 8px;
   border: 1px solid #C48B39;
@@ -63,23 +50,25 @@ body.course-page {
   background-color: #C48B39;
 }
   
-/* Style div elements that have class equal to name */
+
 .name {
   font-size: 24px;
   font-weight: 600;
-
   margin-top: 16px;
 }
 
-/* Style p element */
+
+
 .p {
   font-size: 14px;
   color: #7f8c9b;
   line-height: 150%;
+  text-overflow: ellipsis;
 }
 
 .tags {
   display: flex;
   justify-content: space-around;
 }
+
 

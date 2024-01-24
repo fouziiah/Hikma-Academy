@@ -85,6 +85,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_24_164039) do
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
+  create_table "enrollments", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "course_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_enrollments_on_course_id"
+    t.index ["user_id"], name: "index_enrollments_on_user_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.integer "price"
@@ -130,5 +139,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_24_164039) do
   add_foreign_key "children", "users"
   add_foreign_key "courses", "children"
   add_foreign_key "courses", "users"
+  add_foreign_key "enrollments", "courses"
+  add_foreign_key "enrollments", "users"
   add_foreign_key "users", "roles"
 end
