@@ -14,7 +14,7 @@
   <h1>Teacher Dashboard</h1>
   <% if @courses.any? %>
     <h2>Your Courses</h2>
-    <div class="courses-container">
+    <div class="courses-cont">
       <% @courses.each do |course| %>
         <div class="course-card">
           <h3><%= course.name %></h3>
