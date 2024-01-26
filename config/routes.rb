@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get '/about', to: 'about#index'
 
   get 'teacher/dashboard', to: 'teacher#dashboard'
+  resource :cart, only: [:destroy]
 end

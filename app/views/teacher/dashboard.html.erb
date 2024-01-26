@@ -9,7 +9,6 @@
     </ul>
 </div>
 
-
 <div class="main-content">
   <h1>Teacher Dashboard</h1>
   <% if @courses.any? %>
@@ -18,6 +17,7 @@
       <% @courses.each do |course| %>
         <div class="course-card">
           <h3><%= course.name %></h3>
+          <p>Student: <%= course.enrollments.count %></p>
         </div>
       <% end %>
     </div>
@@ -25,3 +25,4 @@
     <p>You have no courses assigned.</p>
   <% end %>
 </div>
+
