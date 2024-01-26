@@ -51,13 +51,27 @@ class CoursesController < ApplicationController
 
   # DELETE /courses/1 or /courses/1.json
   def destroy
-    @course.destroy!
+    @course.enrollments.destroy_all
+
+    @course.destroy
 
     respond_to do |format|
-      format.html { redirect_to courses_url, notice: "Course was successfully destroyed." }
-      format.json { head :no_content }
+      if @course.destroyed?
+        format.html { redirect_to courses_url, notice: "Course was successfully destroyed." }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to courses_url, alert: "Course could not be destroyed." }
+        format.json { render json: @course.errors, status: :unprocessable_entity }
+      end
+    end
+
+  rescue ActiveRecord::RecordNotDestroyed => e
+    respond_to do |format|
+      format.html { redirect_to courses_url, alert: e.message }
+      format.json { render json: { error: e.message }, status: :unprocessable_entity }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
