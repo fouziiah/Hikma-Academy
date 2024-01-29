@@ -1,0 +1,10 @@
+<h1 class="dashboard-heading">Welcome to Your Dashboard, <%=  current_user.first_name.capitalize %> <%= current_user.last_name.first.upcase %>!</h1>
+<h2 class="section-heading">Your Courses:</h2>
+<% if current_user.is_student? %>
+  <ul>
+    <% @enrolled_courses.each do |course| %>
+      <li><%= course.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+<% end %>
