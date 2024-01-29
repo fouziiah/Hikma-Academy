@@ -22,6 +22,8 @@ class CoursesController < ApplicationController
   # POST /courses or /courses.json
   def create
     @course = Course.new(course_params)
+    @course.teacher_id = current_user.id if current_user.is_teacher?    
+  
 
     respond_to do |format|
       if @course.save
@@ -74,14 +76,13 @@ class CoursesController < ApplicationController
 
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_course
       @course = Course.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+
     def course_params
-      params.require(:course).permit(:name, :teacher, :description, :status, :capacity, :start_date, :end_date, :location, :course_type, :format, :payment_type, :user_id, :image, :price)
+      params.require(:course).permit(:name, :description, :status, :capacity, :start_date, :end_date, :location, :course_type, :format, :payment_type, :user_id, :image, :price, :teacher_id)
     end
 
     # Save course information to the products table and create the product in Stripe
