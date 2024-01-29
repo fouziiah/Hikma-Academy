@@ -22,6 +22,8 @@ class CoursesController < ApplicationController
   # POST /courses or /courses.json
   def create
     @course = Course.new(course_params)
+    @course.teacher_id = current_user.id if current_user.is_teacher?    
+  
 
     respond_to do |format|
       if @course.save
@@ -51,23 +53,36 @@ class CoursesController < ApplicationController
 
   # DELETE /courses/1 or /courses/1.json
   def destroy
-    @course.destroy!
+    @course.enrollments.destroy_all
+
+    @course.destroy
 
     respond_to do |format|
-      format.html { redirect_to courses_url, notice: "Course was successfully destroyed." }
-      format.json { head :no_content }
+      if @course.destroyed?
+        format.html { redirect_to courses_url, notice: "Course was successfully destroyed." }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to courses_url, alert: "Course could not be destroyed." }
+        format.json { render json: @course.errors, status: :unprocessable_entity }
+      end
+    end
+
+  rescue ActiveRecord::RecordNotDestroyed => e
+    respond_to do |format|
+      format.html { redirect_to courses_url, alert: e.message }
+      format.json { render json: { error: e.message }, status: :unprocessable_entity }
     end
   end
 
+
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_course
       @course = Course.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+
     def course_params
-      params.require(:course).permit(:name, :teacher, :description, :status, :capacity, :start_date, :end_date, :location, :course_type, :format, :payment_type, :user_id, :image, :price)
+      params.require(:course).permit(:name, :description, :status, :capacity, :start_date, :end_date, :location, :course_type, :format, :payment_type, :user_id, :image, :price, :teacher_id)
     end
 
     # Save course information to the products table and create the product in Stripe

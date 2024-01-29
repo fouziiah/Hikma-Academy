@@ -1,0 +1,42 @@
+<div class="dash-cont">
+<div class="aside">
+  
+    <div class="user-profile">
+      <% if current_user.image.attached? %>
+        <%= image_tag current_user.image, class: "user-profile-picture" %>
+      <% else %>
+        <%= image_tag 'default-profile.png', class: "user-profile-picture" %> 
+      <% end %>
+      <h3 class="user-name"><%= current_user.first_name%></h3>
+    </div>
+    
+
+    <div class="dashboard">
+      <h4>Dashboard</h4>
+    </div>
+
+    <ul class="nav-list">
+      <li class="nav-item"><%= link_to 'Courses', teacher_courses_path %></li>
+      <li class="nav-item"><%= link_to 'Students', teacher_students_path %></li>
+      <li class="nav-item"><a href="#">Assign</a></li>
+    </ul>
+  </div>
+
+
+  <div class="main-content">
+    <% if @courses.any? %>
+      <h2>Your Courses</h2>
+
+      <div class="courses-cont">
+        <% @courses.each do |course| %>
+
+          <div class="course-card">
+            <h3><%= course.name %></h3>
+            <p>Students: <%= course.enrollments.count %></p>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p>You have no courses assigned.</p>
+    <% end %>
+  </div>

@@ -15,6 +15,11 @@ Rails.application.routes.draw do
   # root "posts#index"
   root "home#index"
   get '/about', to: 'about#index'
+  
+  get '/teacher', to: 'teacher#index'
+  get '/teacher/students', to: 'teacher#students'
+  get '/teacher/courses', to: 'teacher#courses'
 
-  get 'teacher/dashboard', to: 'teacher#dashboard'
+
+  resource :cart, only: [:destroy]
 end

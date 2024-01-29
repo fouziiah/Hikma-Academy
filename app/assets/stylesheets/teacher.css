@@ -1,22 +1,44 @@
+
 .dash-cont {
     display: flex;
-    height: 100vh; 
+    min-height: 100vh; 
 }
+
+
 
 .aside {
     width: 250px; 
-    flex-shrink: 0; 
     background-color: #333;
     color: white;
 
 }
 
+
+.user-profile {
+    text-align: center;
+    padding: 20px;
+    color: white;
+  }
+  
+  .user-profile-picture {
+    width: 130px; 
+    height: 130px; 
+    object-fit: cover; 
+    margin-bottom: 10px; 
+  }
+  
+  .user-name {
+    margin-top: 10px;
+    font-size: 1.2em; 
+  }
+
 .main-content {
-    width: 78em;
-    background-color: #ba5151; 
-    padding-left: 20px; 
-    
+    width: 73.2em;
+    background-color: #ffffff;
+    padding-left: 20px;
+    box-shadow: 0 -4px 10px -10px rgba(0, 0, 0, 0.2); 
 }
+
 
 .dashboard h4 {
     padding: 20px;
@@ -29,6 +51,7 @@
     list-style: none; 
     padding: 0;
     margin: 0;
+    text-align: center;
 }
 
 .nav-item a {
@@ -71,3 +94,4 @@
 .courses {
     display: none; 
 }
+
