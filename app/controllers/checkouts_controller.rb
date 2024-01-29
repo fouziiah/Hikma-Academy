@@ -15,8 +15,8 @@ class CheckoutsController < ApplicationController
                               .checkout(
                                 mode: 'payment',
                                 line_items: @course.product.stripe_price_id,
-                                success_url: checkout_success_url
-                              )
+                                success_url: courses_url
+                              )                             
     end
 
     def success
