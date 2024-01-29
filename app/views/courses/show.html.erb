@@ -5,4 +5,5 @@
   <%= link_to "Back to courses", courses_path %>
 
   <%= button_to "Destroy this course", @course, method: :delete %>
+  <%= link_to "Buy Course", checkout_path(course_id: @course.id) %>
 </div>
