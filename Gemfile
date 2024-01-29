@@ -72,3 +72,4 @@ end
 # For stripe
 gem "stripe"
 gem 'dotenv-rails'
+gem "pay", "~> 7.1"

@@ -87,7 +87,7 @@ class CoursesController < ApplicationController
 
     # Save course information to the products table and create the product in Stripe
     def save_course_to_products(course)
-      @product = Product.new(name: course.name, price: course.price)
+      @product = Product.new(name: course.name, price: course.price, course_id: course.id)
     
       # Save the product to your local database
       if @product.save

@@ -5,6 +5,10 @@
     font-family: 'Athelas', serif;
 }
 
+.containers {
+    text-align: center;
+}
+
 .img-border {
     background-color: #DDBA88;
     border: 1px solid #DDBA88;
