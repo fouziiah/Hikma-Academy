@@ -10,7 +10,7 @@
       <div class="tags">
         <span class="tag"><%= course.course_type %></span>
         <span class="tag"><%= course.format %></span>
-        <span class="tag"><%= course.payment_type %></span>
+        <span class="tag"><%= course.once? ? 'one-time' : 'recurring' %></span>
         <span class="tag"><%= course.status %></span>
       </div>
       <hr>

@@ -112,6 +112,7 @@ class CoursesController < ApplicationController
         product: stripe_product.id,
         unit_amount: product.price * 100, # Stripe uses cents, so multiply by 100
         currency: 'usd', # Adjust the currency as needed
+        recurring: @course.recurring? ? { interval: 'month' } : nil
       })
     
       # Update your local product with Stripe information
