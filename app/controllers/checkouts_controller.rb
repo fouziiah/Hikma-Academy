@@ -13,7 +13,7 @@ class CheckoutsController < ApplicationController
         @checkout_session = current_user
                               .payment_processor
                               .checkout(
-                                mode: 'payment',
+                                mode: @course.recurring? ? 'subscription' : 'payment',
                                 line_items: @course.product.stripe_price_id,
                                 success_url: courses_url
                               )                             
