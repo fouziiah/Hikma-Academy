@@ -5,22 +5,22 @@
     </div>
     <nav class="footer-nav">
       <ul class="footer-nav-list">
-        <li><a href="#about" class="footer-nav-link">About Us</a></li>
-        <li><a href="#contact" class="footer-nav-link">Contact Us</a></li>
-        <li><a href="#course" class="footer-nav-link">Course</a></li>
+        <li><%= link_to 'About us', about_path, class: 'footer-nav-link' %></li>
+        <li><%= link_to "Contact Us", contacts_index_path, class: "footer-nav-link" %></li>
+        <li><%= link_to 'Courses', courses_path, class: 'footer-nav-link' %></li>
         <li><a href="#blog" class="footer-nav-link">Blog</a></li>
       </ul>
     </nav>
     <ul class="social-media">
       <li>
-        <a href="https://www.instagram.com/yourusername">
+        <a href="https://www.instagram.com/hikmaacademymn/">
           <%= image_tag('instagram.png', alt: 'Instagram icon', class: 'instagram') %>
         </a>
       </li>
     </ul>
     <hr>
     <div class="footer-copyright">
-        <p>5995 Timber Trail SE, Prior Lake, MN 5537, United States</p>
+        <p>5995 Timber Trail SE, Prior Lake, MN 55372, United States</p>
         <p class="phone-and-address">952-447-7786 | hikmaacademy.mn@gmail.com</p>
         <p>Copyright © 2024 Hikma Academy</p>
     </div>
