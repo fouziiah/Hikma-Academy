@@ -1,0 +1,39 @@
+<div class="instructor">
+<h3><%= "#{ @course.teacher.first_name } #{ @course.teacher.last_name }" if @course.teacher.present? %></h3>
+<span><em>Instructor</strong></em>
+</div>
+
+<div class="course-details">
+  <h2 class="course-name">Course Details</h2>
+  <p class="course-description"><strong>Description:</strong> <%= @course.description %></p>
+  <p class="course-description"><strong>Start_date:</strong> <%= @course.start_date%></p>
+
+  <% if @course.format == 'online' %>
+    <p class="no-location">This course is conducted online.</p>
+    <p><strong>Class Links:</strong></p>
+
+    <ul class="class-links">
+      <li>
+        <a href="https://zoom.us/signin#/login">
+          <img class="class-link-icon" src="<%= asset_path('zoom.png') %>" alt="Zoom">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.whatsapp.com/">
+          <img class="class-link-icon" src="<%= asset_path('whatsapp.png') %>" alt="WhatsApp">
+        </a>
+      </li>
+      <li>
+        <a href="https://edu.google.com/workspace-for-education/classroom/">
+          <img class="class-link-icon" src="<%= asset_path('google-classroom1.png') %>" alt="Google Classroom">
+        </a>
+      </li>
+    </ul>
+  <% elsif @course.format == 'location' %>
+    <% if @course.location.present? %>
+      <p class="course-location"><strong>Location:</strong> <%= @course.location %></p>
+    <% else %>
+      <p class="no-location">No physical location provided.</p>
+    <% end %>
+  <% end %>
+</div>

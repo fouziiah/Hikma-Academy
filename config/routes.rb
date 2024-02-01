@@ -17,10 +17,11 @@ Rails.application.routes.draw do
   root "home#index"
   get '/about', to: 'about#index'
   
+  resources :students, only: [:index, :show]
+
   get '/teacher', to: 'teacher#index'
   get '/teacher/students', to: 'teacher#students'
   get '/teacher/courses', to: 'teacher#courses'
-  get 'student/dashboard' , to: 'student#dashboard'
 
   resource :cart, only: [:destroy]
 end
