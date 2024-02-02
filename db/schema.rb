@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_29_001546) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_01_191529) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -66,7 +66,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_29_001546) do
 
   create_table "courses", force: :cascade do |t|
     t.string "name"
-    t.string "teacher"
     t.text "description"
     t.string "capacity"
     t.date "start_date"
@@ -94,6 +93,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_29_001546) do
     t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_enrollments_on_course_id"
     t.index ["user_id"], name: "index_enrollments_on_user_id"
+  end
+
+  create_table "orderables", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.bigint "cart_id", null: false
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_orderables_on_cart_id"
+    t.index ["product_id"], name: "index_orderables_on_product_id"
   end
 
   create_table "pay_charges", force: :cascade do |t|
@@ -236,6 +245,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_29_001546) do
   add_foreign_key "courses", "users", column: "teacher_id"
   add_foreign_key "enrollments", "courses"
   add_foreign_key "enrollments", "users"
+  add_foreign_key "orderables", "carts"
+  add_foreign_key "orderables", "products"
   add_foreign_key "pay_charges", "pay_customers", column: "customer_id"
   add_foreign_key "pay_charges", "pay_subscriptions", column: "subscription_id"
   add_foreign_key "pay_payment_methods", "pay_customers", column: "customer_id"

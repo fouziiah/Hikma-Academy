@@ -25,6 +25,7 @@
     <div class="container">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
+      <%= render partial: "carts/cart" if @render_cart %>
       <%= yield %>
     </div>
     <%= render 'home/footer' %> 

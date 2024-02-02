@@ -21,5 +21,7 @@ Rails.application.routes.draw do
   get '/teacher/courses', to: 'teacher#courses'
   get 'student/dashboard' , to: 'student#dashboard'
 
-  resource :cart, only: [:destroy]
+  get "cart", to: 'carts#show'
+  post "carts/add"
+  post "carts/remove"
 end
