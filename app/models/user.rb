@@ -24,11 +24,37 @@ class User < ApplicationRecord
     }
   end
   
-def is_teacher?
-  role.present? && role.name == 'teacher'
-end 
+  def is_teacher?
+    role.present? && role.name == 'teacher'
+  end 
               
-def is_student?
-  role.present? && role.name == 'student'
-end 
+  def is_student?
+    role.present? && role.name == 'student'
+  end 
+
+  def self.ransackable_associations(auth_object = nil)
+    ["role"]
+  end
+
+  def self.ransackable_attributes(auth_object = nil)
+    [
+      "id",
+      "first_name",
+      "last_name",
+      "username",
+      "phone",
+      "email",
+      "encrypted_password",
+      "reset_password_token",
+      "reset_password_sent_at",
+      "remember_created_at",
+      "confirmation_token",
+      "confirmed_at",
+      "confirmation_sent_at",
+      "unconfirmed_email",
+      "created_at",
+      "updated_at"
+    ]
+  end
+
 end
