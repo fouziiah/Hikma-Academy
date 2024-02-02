@@ -105,6 +105,7 @@ class CoursesController < ApplicationController
       stripe_product = Stripe::Product.create({
         name: product.name,
         type: 'good', # You can adjust this based on your product type
+        description: @course.description,
       })
     
       # Create a price for the product

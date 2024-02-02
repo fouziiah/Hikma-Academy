@@ -1,0 +1,17 @@
+<div class="jumbotron">
+  <% product_ids = [] %>
+
+  <h2 style=" text-align: center;">Order Total</h2>
+  <% @cart.orderables.each do |orderable| %>
+    <% product = orderable.product %>
+    <p><%= product.name %> * <%= orderable.quantity %> = <%= number_to_currency(product.price * orderable.quantity) %></p>
+    <% product_ids << product.id %>
+  <% end %>
+
+  <% if @cart.total > 0 %>
+    <p>Your total is <%= number_to_currency(@cart.total)%> </p>
+    <%= button_to 'checkout' %>
+  <% else %>
+  <p style=" text-align: center;">Your total is <%= number_to_currency(@cart.total)%> </p>
+  <% end %>
+</div>
