@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  get 'contacts/index'
   get 'studentxp/index'
   resources :courses
 
@@ -16,10 +19,11 @@ Rails.application.routes.draw do
   root "home#index"
   get '/about', to: 'about#index'
   
+  resources :students, only: [:index, :show]
+
   get '/teacher', to: 'teacher#index'
   get '/teacher/students', to: 'teacher#students'
   get '/teacher/courses', to: 'teacher#courses'
-  get 'student/dashboard' , to: 'student#dashboard'
 
   get "cart", to: 'carts#show'
   post "carts/add"

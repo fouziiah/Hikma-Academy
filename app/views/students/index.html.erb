@@ -3,7 +3,7 @@
 <% if current_user.is_student? %>
   <ul>
     <% @enrolled_courses.each do |course| %>
-      <li><%= course.name %></li>
+      <li><%= link_to course.name, student_path(course) %></li>
     <% end %>
   </ul>
 <% else %>
