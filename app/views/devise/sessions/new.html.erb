@@ -1,3 +1,8 @@
+<%= stylesheet_link_tag "login_signup.css" %>
+<div class="sign">
+      <%= image_tag('hikma_Verticaltagline.png', alt: 'Hikma Academy logo') %>
+</div>
+<div class="form-container">
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -24,3 +29,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

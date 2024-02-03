@@ -1,0 +1,40 @@
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #DDBA88;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Avenir', sans-serif;
+}
+  
+.fields {
+    display: flex;
+    flex-direction: column;
+}
+  
+.fields input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px; 
+    margin-top: 10px; 
+    outline: none;
+}
+  
+.sign {
+    text-align: center;
+}
+  
+.sign img {
+    width: 300px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+  
+.custom-button {
+    padding: 10px 20px; 
+    font-size: 16px;
+    width: auto; 
+    margin: 0 auto; 
+}
