@@ -4,33 +4,32 @@
     text-align: center; 
     background-color: #C48B39;
     
-  }
+}
   
-  .welcome-message h1 {
+.welcome-message h1 {
     font-size: 3rem; 
     margin-bottom: 0.5em;
-  }
+}
   
-  .welcome-message .quote {
+.welcome-message .quote {
     font-style: italic;
     margin-bottom: 0.5em;
-  }
+}
   
-  .welcome-message .prophet {
+.welcome-message .prophet {
     margin-bottom: 0.5em;
-  }
+}
   
 
-  .second-header-msg{
+.second-header-msg{
     margin-top: 70px;
     text-align: center;
     font-size: 2.3rem;
-  }
+}
 
-  /* ..................................Highlights................................... */
 
   
-  .highlights {
+.highlights {
     text-align: center;
     display: flex;
     justify-content: space-around;
@@ -39,42 +38,44 @@
     max-width: 50em;
     height: 23em;
     position: relative;
-  }
+}
   
-  .highlights > div {
+.highlights > div {
     flex: 1;
     background-color: #FFFFFF;
     padding: 2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     transition: box-shadow 0.3s ease-in-out;
-  }
+}
   
-  .highlights > div:hover {
+.highlights > div:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-  }
+}
   
-  .highlights h2 {
+.highlights h2 {
     text-align: center;
     margin-bottom: 1rem; 
-  }
+}
   
-  .highlights p {
+.highlights p {
     text-align: center;
     margin-bottom: 1rem; 
     line-height: 1.6;
-  }
+}
   
 
-  .highlights .Parents-card {
+.highlights .Parents-card {
     color: black;
-  }
+}
   
-  .highlights a.learn-more {
+.highlights a.learn-more {
     color: #BE1E1E;
     text-decoration: none;
     font-weight: bold;
     padding: 10px;
-  }
+}
+
+
   
