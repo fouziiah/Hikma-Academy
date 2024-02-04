@@ -1,4 +1,58 @@
+.about-container h1,
+.core-container h1 {
+  color: #BE1E1E;
+  font-size: 33px;
+  text-align: center;
+  font-family: 'Athelas', serif;
+}
 
+.core-container {
+  text-align: center; 
+}
+
+.core-container img {
+  display: inline-block; 
+  max-width: 100%; 
+}
+
+.content-box {
+  border: 1px solid #ccc;
+  padding: 10px; 
+  margin-bottom: 20px; 
+  width: calc(50% - 20px); 
+  box-sizing: border-box; 
+  vertical-align: top; 
+  font-family: 'Avenir', sans-serif;
+  
+
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-box strong {
+  color: #BE1E1E;
+}
+
+
+@media (max-width: 768px) {
+  .about-container,
+  .core-container {
+    display: block;
+    text-align: center;
+  }
+
+  .content-box {
+    width: calc(100% - 20px); 
+    margin: 10px auto; 
+  }
+}
+
+
+
+  
+  
+  
 
 
 
