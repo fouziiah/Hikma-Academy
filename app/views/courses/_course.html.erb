@@ -1,4 +1,8 @@
-<div id="<%= dom_id course %>">
+<div id="<%= dom_id course %>" style="border: 1px solid #000; margin: 10px; background-color: #DDBA88; padding: 10px; display: flex;">
+  <div style="flex: 1;">
+    <%= image_tag course.image, class: "img" %>
+  </div>
+  <div style="flex: 2; text-align: left;">
   <p>
     <strong>Name:</strong>
     <%= course.name %>
@@ -53,5 +57,5 @@
     <strong>Price</strong>
     <%= number_to_currency(course.price) %>
   </p>
-
+</div>
 </div>
