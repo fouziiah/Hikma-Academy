@@ -1,10 +1,39 @@
-<h1 class="dashboard-heading">Welcome to Your Dashboard, <%=  current_user.first_name.capitalize %> <%= current_user.last_name.first.upcase %>!</h1>
-<h2 class="section-heading">Your Courses:</h2>
-<% if current_user.is_student? %>
-  <ul>
-    <% @enrolled_courses.each do |course| %>
-      <li><%= link_to course.name, student_path(course) %></li>
+<div class="student-dash-cont">
+  <div class="side">
+    <div class="user-profile">
+      <% if current_user.image.attached? %>
+        <%= image_tag current_user.image, class: "user-profile-picture" %>
+      <% else %>
+        <%= image_tag 'default-profile.png', class: "user-profile-picture" %> 
+      <% end %>
+      <div class="user-name">
+        Welcome to Your Dashboard, <%= current_user.first_name.capitalize %> <%= current_user.last_name.first.upcase %>!
+      </div>
+    </div>
+    <ul class="nav-list">
+      <!-- Display current courses here if the user is a student -->
+      <% if current_user.is_student? %>
+        <% @enrolled_courses.each do |course| %>
+          <li class="nav-item"><%= link_to course.name, student_path(course) %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <h2 class="dashboard-heading">Your Courses:</h2>
+    <% if current_user.is_student? %>
+      <ul class="courses-cont">
+        <% @enrolled_courses.each do |course| %>
+          <li class="course-card">
+            <%= image_tag course.image, class: "course-image" if course.image.attached? %>
+            <h3><%= link_to course.name, student_path(course) %></h3>
+          </li>
+        <% end %>
+      </ul>
     <% end %>
-  </ul>
-<% else %>
-<% end %>
+  </div>
+</div>
+
+
+

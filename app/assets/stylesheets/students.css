@@ -1,0 +1,86 @@
+.student-dash-cont {
+    display: flex;
+    min-height: 100vh; 
+}
+
+.side {
+    width: 250px; 
+    background-color:#DDBA88;
+    color: white;
+}
+
+.user-profile {
+    text-align: center;
+    padding: 20px;
+}
+
+.user-profile-picture {
+    width: 130px; 
+    height: 130px; 
+    object-fit: cover; 
+    margin-bottom: 10px; 
+    border-radius: 50%; 
+}
+
+.user-name {
+    margin-top: 10px;
+    font-size: 1.2em; 
+}
+
+.main-content {
+    flex-grow: 1; 
+    background-color: #ffffff;
+    padding-left: 20px;
+}
+
+.dashboard-heading {
+    padding: 15px;
+    margin: 0;
+    background-color: white; 
+    text-align: left;
+    color: black;
+}
+
+.nav-list {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.nav-item a {
+    display: block; 
+    padding: 15px 20px;
+    color: white; 
+    text-decoration: none; 
+    transition: background-color 0.3s; 
+}
+
+.nav-item a:hover {
+    background-color: #DDBA88; 
+}
+
+.courses-cont {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.course-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card h3 {
+    font-size: 1.5em;
+    color: #DDBA88;
+    margin: 0;
+    padding: 20px;
+    background-color: #eaeaea;
+    border-bottom: 1px solid #ddd;
+}
