@@ -1,32 +1,28 @@
 <header>
-    <a href="<%= root_path %>">
+  <a href="<%= root_path %>">
     <img class="logo" src="<%= asset_path('OnlyLogoFullColor.png') %>" alt="logo">
-    </a>
-    <ul class="nav-links">
-        <li><%= link_to 'About', about_path, class: 'custom-link' %></li>
+  </a>
+  <ul class="nav-links">
+    <% if user_signed_in? %>
+      <% if current_user.role_id == 1 %>
+        <li><%= link_to 'Teacher Dashboard', teacher_courses_path, class: 'custom-link' %></li>
+      <% elsif current_user.role_id == 2 %>
+        <li><%= link_to 'Student Dashboard', students_path, class: 'custom-link' %></li>
+      <% end %>
+    <% end %>
 
-        <li><%= link_to 'Courses', courses_path, class: 'custom-link' %></li>
+    <li><%= link_to 'About', about_path, class: 'custom-link' %></li>
+    <li><%= link_to 'Courses', courses_path, class: 'custom-link' %></li>
+    <li><%= link_to 'Student Experience', studentxp_index_path, class: 'custom-link' %></li>
 
-        <li><%= link_to 'Student Experience', studentxp_index_path, class: 'custom-link' %></li>
+    <li><a href="<%= cart_path %>"><img class="cart" src="<%= asset_path('cart.png') %>" alt="cart"></a></li>
 
-        <li>
-            <a href="<%= cart_path %>">
-            <img class="cart" src="<%= asset_path('cart.png') %>" alt="cart">
-            </a>
-        </li>
+    <li><%= link_to 'Donate', 'https://donorbox.org/support-hikma-academy', class: "donate-button" %></li>
 
-        <li>
-            <%= link_to 'Donate', 'https://donorbox.org/support-hikma-academy', class: "donate-button" %>
-        </li>
-
-        <% if user_signed_in? %>
-            <li>
-                 <%= button_to 'Sign Out', destroy_user_session_path, method: :delete %>
-            </li>
-        <% else %>
-            <li>
-                <%= button_to 'Sign In', new_user_session_path %>
-            </li>
-        <% end %>
-    </ul>
+    <% if user_signed_in? %>
+      <li><%= button_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+    <% else %>
+      <li><%= button_to 'Sign In', new_user_session_path %></li>
+    <% end %>
+  </ul>
 </header>

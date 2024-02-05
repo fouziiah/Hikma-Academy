@@ -1,14 +1,19 @@
+<%= link_to "Back to courses", courses_path, style: "font-size: 30px;" %>
 <%= render @course %>
 
 <div>
-  <%= link_to "Edit this course", edit_course_path(@course) %> |
-  <%= link_to "Back to courses", courses_path %>
+  <% if user_signed_in? && current_user.role_id == 1 %>
+    <%= link_to "Edit this course", edit_course_path(@course) %>
+    <%= button_to "Delete this course", @course, method: :delete %>
+  <% end %>
 
-  <%= button_to "Destroy this course", @course, method: :delete %>
-  <%= link_to "Buy Course", checkout_path(course_id: @course.id) %>
-  <%= form_with(url: carts_add_path) do |f| %>
-    <%= f.hidden_field :id, value: @course.product.id %>
-    <%= f.number_field :quantity, value: 1, min: 1, type: :hidden %>
-    <%= f.submit "Add to cart" %>
+  <% if user_signed_in? && current_user.role_id == 2 %>
+    <%= link_to "Buy Course", checkout_path(course_id: @course.id) %>
+    <%= form_with(url: carts_add_path) do |f| %>
+      <%= f.hidden_field :id, value: @course.product.id %>
+      <%= f.number_field :quantity, value: 1, min: 1, type: :hidden %>
+      <%= f.submit "Add to cart" %>
+    <% end %>
   <% end %>
 </div>
+
