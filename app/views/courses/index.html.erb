@@ -1,3 +1,8 @@
+<h1 class="welcome-courses"> Welcome to our courses!</h1>
+
+<% if user_signed_in? && current_user.role == Role.find_by(name: 'teacher') %>
+  <%= link_to "Add new course", new_course_path, style: "font-size: 24px;" %>
+<% end %>
 <div id="courses", class="course-container">
   <% @courses.sort_by(&:name).each do |course| %>
     <div class="card">
@@ -8,9 +13,7 @@
       <% end %>
 
       <div class="tags">
-        <span class="tag"><%= course.course_type %></span>
         <span class="tag"><%= course.format %></span>
-        <span class="tag"><%= course.once? ? 'one-time' : 'recurring' %></span>
         <span class="tag"><%= course.status %></span>
       </div>
       <hr>
@@ -19,6 +22,3 @@
     </div>
   <% end %>
 </div>
-
-<br><br>
-<%= link_to "New course", new_course_path %>

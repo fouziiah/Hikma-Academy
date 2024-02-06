@@ -1,13 +1,13 @@
 <header>
   <a href="<%= root_path %>">
-    <img class="logo" src="<%= asset_path('OnlyLogoFullColor.png') %>" alt="logo">
+    <img class="headlogo" src="<%= asset_path('OnlyLogoFullColor.png') %>">
   </a>
   <ul class="nav-links">
     <% if user_signed_in? %>
-      <% if current_user.role_id == 1 %>
-        <li><%= link_to 'Teacher Dashboard', teacher_courses_path, class: 'custom-link' %></li>
-      <% elsif current_user.role_id == 2 %>
-        <li><%= link_to 'Student Dashboard', students_path, class: 'custom-link' %></li>
+      <% if current_user.role == Role.find_by(name: 'teacher') %>
+        <li><%= link_to 'Dashboard', teacher_courses_path, class: 'custom-link' %></li>
+      <% elsif current_user.role == Role.find_by(name: 'student') %>
+        <li><%= link_to 'Dashboard', students_path, class: 'custom-link' %></li>
       <% end %>
     <% end %>
 
