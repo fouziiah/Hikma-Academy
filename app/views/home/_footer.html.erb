@@ -20,9 +20,10 @@
     </ul>
     <hr>
     <div class="footer-copyright">
-        <p>5995 Timber Trail SE, Prior Lake, MN 55372, United States</p>
-        <p class="phone-and-address">952-447-7786 | hikmaacademy.mn@gmail.com</p>
-        <p>Copyright © 2024 Hikma Academy</p>
+      <p><%= TextContent.find_by(location: "footer_address")&.body %></p>
+      <p class="phone-and-address"><%= TextContent.find_by(location: "footer_contact")&.body %></p>
+      <p><%= TextContent.find_by(location: "footer_copyright")&.body %></p>
     </div>
+
   </div>
 </footer>
