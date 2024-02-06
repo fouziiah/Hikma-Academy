@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post 'payments/create'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get 'contacts/index'
@@ -28,4 +29,5 @@ Rails.application.routes.draw do
   get "cart", to: 'carts#show'
   post "carts/add"
   post "carts/remove"
+  get 'clear_cart', to: 'carts#clear_cart'
 end

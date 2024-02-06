@@ -8,7 +8,7 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <link rel="icon" type="image/x-icon" href="<%= asset_path('OnlyLogoFullColor.png') %>">
+    <link rel="icon" type="image/x-icon" href="<%= asset_path('logo/OnlyLogoFullColor.png') %>">
     <%= stylesheet_link_tag "header.css" %>
     <%= stylesheet_link_tag 'about.css' %>
     <%= stylesheet_link_tag "footer.css" %>
@@ -17,6 +17,7 @@
     <%= stylesheet_link_tag "courses.css" %>
     <%= stylesheet_link_tag "teacher.css" %>
 
+    <%= javascript_include_tag 'checkout.js' %>
     <script src="https://js.stripe.com/v3"></script>
   </head>
 
