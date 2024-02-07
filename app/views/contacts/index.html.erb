@@ -1,11 +1,14 @@
 <%= stylesheet_link_tag "contact.css" %>
-<h1>Contact Us</h1>
+<div class="contact-message">
+  <h1><%= TextContent.find_by(location: "contact_header")&.body %></h1>
 
-<div class="contact-info">
-  <p><strong>Address:</strong> 5995 Timber Trail SE, Prior Lake, MN 55372, United States</p>
-  <p><strong>Email:</strong> hikmaacademy.mn@gmail.com</p>
-  <p><strong>Phone:</strong> 952-447-7786</p>
+  <div class="contact-info">
+    <p><strong>Address:</strong> <%= TextContent.find_by(location: "contact_address")&.body %></p>
+    <p><strong>Email:</strong> <%= TextContent.find_by(location: "contact_email")&.body %></p>
+    <p><strong>Phone:</strong> <%= TextContent.find_by(location: "contact_phone")&.body %></p>
+  </div>
 </div>
+
 
 <div class="contact-info">
   <p>Alternatively, visit us on the map:</p>
