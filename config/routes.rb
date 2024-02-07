@@ -28,7 +28,6 @@ Rails.application.routes.draw do
   get '/teacher/students', to: 'teacher#students'
   get '/teacher/courses', to: 'teacher#courses'
 
-
   get 'cart', to: 'carts#show'
   post 'carts/add'
   post 'carts/remove'
