@@ -4,15 +4,18 @@
     margin-bottom: 20px;
     width: 60%;
     margin-left: 17em;
+    font-family: 'Avenir', sans-serif;
   }
 
   .course-name {
     font-size: 24px;
     margin-bottom: 10px;
+    font-family: 'Avenir', sans-serif;
   }
 
   .course-description {
     margin-bottom: 15px;
+    font-family: 'Avenir', sans-serif;
   }
 
   .instructor {
@@ -24,6 +27,7 @@
     padding: 10px;
     padding-left: 60px;
     background-color: #ebeaea;
+    font-family: 'Avenir', sans-serif;
 
   }
 
