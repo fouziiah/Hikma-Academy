@@ -1,13 +1,12 @@
-<%= link_to "Back to courses", courses_path, style: "font-size: 30px;" %>
 <%= render @course %>
 
 <div>
-  <% if user_signed_in? && current_user.role_id == 1 %>
+  <% if user_signed_in? && current_user.role == Role.find_by(name: 'teacher') %>
     <%= link_to "Edit this course", edit_course_path(@course) %>
     <%= button_to "Delete this course", @course, method: :delete %>
   <% end %>
 
-  <% if user_signed_in? && current_user.role_id == 2 %>
+  <% if user_signed_in? && current_user.role == Role.find_by(name: 'student') %>
     <%= link_to "Buy Course", checkout_path(course_id: @course.id) %>
     <%= form_with(url: carts_add_path) do |f| %>
       <%= f.hidden_field :id, value: @course.product.id %>

@@ -1,11 +1,43 @@
 .welcome-message {
-    color: white; 
-    padding: 130px 20px;
+    color: white;
+    /* padding: 130px 20px; */
     text-align: center; 
-    background-color: #C48B39;
+    /* background-color: #D1A261; */
+    font-family: 'Athelas', serif;
+    position: absolute;
+    bottom: 27em;
+    z-index: 1;
+    left: 20em;
     
 }
   
+.img-container {
+    position: relative;
+}
+
+.img-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);  */
+
+    z-index: 1; 
+}
+
+img.banner {
+    margin-top: 0;
+    width: 100%;
+    height: 30em;
+    position: relative;
+    z-index: 0; 
+    object-fit: cover;
+}
+
+
+
 .welcome-message h1 {
     font-size: 3rem; 
     margin-bottom: 0.5em;
@@ -76,6 +108,87 @@
     font-weight: bold;
     padding: 10px;
 }
+.home_student_quote {
+    padding: 10em 0;
+    width: 100%;
+    height: 50%;
+    background-color: #f3f2f2; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000; 
+}
 
+.home_student_quote span {
+    font-size: 2.5rem;
+    text-align: center;
+    max-width: 80%;
+}
 
+.hand-raise{
+    width: 100%;
+    margin-left: 0;
+    display: inline-block;
+}
+
+img{
+    max-width: 100%;
+}
+
+.hand-raising-container {
+    width: 50%;
+  }
   
+  .why-hikma-container {
+    flex: 1;
+    padding: 0 5em; 
+
+  }
+  /* ......................................................................... */
+  .section-home-why {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+  }
+  
+  .why-hikma-container h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .why-hikma-container p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .about-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #BE1E1E;
+    color: #FFFFFF;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .about-button:hover {
+    background-color: #9B0000;
+  }
+  
+  @media (max-width: 768px) {
+    .section-home-why {
+        flex-direction: column;
+        text-align: center; 
+    }
+
+    .hand-raising-container {
+        width: 100%;
+        max-width: none; 
+        margin-right: 0;
+        margin-bottom: 20px; 
+    }
+}
+/* ......................................................................... */

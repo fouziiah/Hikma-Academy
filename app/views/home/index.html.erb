@@ -1,27 +1,51 @@
 <div class="font">
-  <div class="welcome-message">
-    <h1>Welcome To Hikma Academy</h1>
-    <p class="quote">“Glad tidings to that individual who becomes a Miftaah (key) towards good and a lock towards evil.” (Sunan Ibn Majah)</p>
-    <p class="prophet">— Prophet Muhammad ﷺ</p>
+<div class="img-container">
+  <img class="banner" src="<%= asset_path('banner.png') %>" alt="banner-image">
   </div>
-
+  <div class="welcome-message">
+    <h1><%= TextContent.find_by(location: "welcome_message_title")&.body %></h1>
+    <p class="quote"><%= TextContent.find_by(location: "welcome_message_quote")&.body %></p>
+    <p class="prophet"><%= TextContent.find_by(location: "welcome_message_prophet")&.body %></p>
+  </div>
 
   <h2 class="second-header-msg">Unlock Your Potential for Knowledge</h2>
 
   <div class="highlights">
     <div class="Featured-Courses">
-      <h2>Diverse Learning Paths</h2>
+      <h2>Diverse Learning</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur sapien vel dolor dapibus, a cursus justo finibus. Integer nec enim eget elit facilisis ullamcorper. Fusce feugiat sapien vitae nunc vehicula, ac fermentum libero interdum. </p>
       <a href="<%= courses_path %>" class="learn-more">Learn More →</a>
 
     </div>
     
     <div class="Parents-card">
-      <h2>Youth Islamic Education</h2>
+      <h2>Marriage workshop</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur sapien vel dolor dapibus, a cursus justo finibus. Integer nec enim eget elit facilisis ullamcorper. Fusce feugiat sapien vitae nunc vehicula, ac fermentum libero interdum. </p>
       <a href="<%= courses_path %>" class="learn-more">Learn More →</a>
     </div>
   </div>
+  <div class="home_student_quote"> 
+  <span>"My experience with Hikma academy has been an amazing, powerful, and very educational journey. What I enjoyed the most about this program is the fact each chapter or Surah we learned each week had applied to my daily life" - Bahja Mohamud</span>
+</div>
+<div>
+
+<div class="section-home-why">
+
+  <div class="hand-raising-container">
+  <%= image_tag("hand-raising.png", class: "hand-raise", alt: "hand raising") %>
+  </div>
+
+  <div class="why-hikma-container">
+    <h2>Is Hikma right for you?</h2>
+    <p>We believe in the power of reflective practice to heal from undesired ways of being and grow into more spiritually aligned and fulfilled people. Our goal in this Dunya is to continuously purify our nafs to attain Jannah in the Akhira.</p>
+    <%= link_to "Learn More", "/about", class: "about-button" %>
+  </div>
+
+</div>
+
+</div>
+
+
 </div>
 
 

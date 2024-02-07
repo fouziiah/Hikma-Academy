@@ -13,7 +13,7 @@
     <ul class="nav-list">
       <!-- Display current courses here if the user is a student -->
       <% if current_user.is_student? %>
-        <% @enrolled_courses.each do |course| %>
+        <% @enrolled_courses.uniq.each do |course| %>
           <li class="nav-item"><%= link_to course.name, student_path(course) %></li>
         <% end %>
       <% end %>
@@ -24,7 +24,7 @@
     <h2 class="dashboard-heading">Your Courses:</h2>
     <% if current_user.is_student? %>
       <ul class="courses-cont">
-        <% @enrolled_courses.each do |course| %>
+        <% @enrolled_courses.uniq.each do |course| %>
           <li class="course-card">
             <%= image_tag course.image, class: "course-image" if course.image.attached? %>
             <h3><%= link_to course.name, student_path(course) %></h3>

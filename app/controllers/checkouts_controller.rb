@@ -9,6 +9,7 @@ class CheckoutsController < ApplicationController
     current_user.set_payment_processor(:stripe)
     current_user.payment_processor.pay_customer
 
+
     course_id = params[:course_id]
     @course = Course.find(course_id)
 
@@ -20,6 +21,4 @@ class CheckoutsController < ApplicationController
                           success_url: courses_url
                         )
   end
-
-  def success; end
 end

@@ -7,4 +7,37 @@
         <p style=" text-align: center;">Your cart is empty</p>
       <% end %>
   </div>
+
+   <%= include_gon %>
+  <div class="jumbotron">
+    <% course_ids = [] %>
+    <div class='payment-card'>
+      <h2 style="text-align: center;">Order Total</h2>
+      <% @cart.orderables.each do |orderable| %>
+        <% product = orderable.product %>
+        <p><%= product.name %> * <%= orderable.quantity %> = <%= number_to_currency(product.price * orderable.quantity) %></p>
+        <% (course = Course.find_by(name: product.name)) ? course_ids << course.id : nil %>
+      <% end %>
+      <p>Your total is <%= number_to_currency(@cart.total) %></p>
+      <% string = course_ids.join(',') %>
+      <% if course_ids.any? %>
+          <%= form_with(model: @payment, url: payments_create_path, method: 'post', local: true, id: 'checkout-form') do |form| %>
+          <% form.label :first_name %>
+          <%= form.text_field :first_name, placeholder: 'First Name', value: current_user.first_name, class: "field" %>
+          <% form.label :last_name %>
+          <%= form.text_field :last_name, placeholder: 'Last Name', value: current_user.last_name, class: "field" %>
+          <% form.label :email %>
+          <%= form.text_field :email, placeholder: 'Email', class: "field", value: current_user.email, readonly: true %>
+          <%= form.hidden_field :user_id, value: current_user.id %>
+          <%= form.hidden_field :course_ids, value: string %>
+          <%= form.hidden_field :amount, value: @cart.total %>
+          <div id="card-container">
+            <div id="card-element"></div>
+            <div id="card-errors" role="alert"></div>
+            <button id="checkout-button">Pay Now</button>
+          </div>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
 <% end %>

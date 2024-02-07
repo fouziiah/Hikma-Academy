@@ -10,6 +10,7 @@ body.course-page {
     margin: 0 auto;
     margin-top: 10vh;
     padding: 10vh;
+    font-family: 'Avenir', sans-serif;
 }
 
 .img {
@@ -32,6 +33,7 @@ body.course-page {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   transition: box-shadow 0.3s ease-in-out;
+  font-family: 'Avenir', sans-serif;
 }
 
 .card:hover {
@@ -48,6 +50,7 @@ body.course-page {
   font-weight: 600;
   color: white;
   background-color: #C48B39;
+  font-family: 'Avenir', sans-serif;
 }
   
 
@@ -55,6 +58,7 @@ body.course-page {
   font-size: 24px;
   font-weight: 600;
   margin-top: 16px;
+  font-family: 'Avenir', sans-serif;
 }
 
 
@@ -64,11 +68,28 @@ body.course-page {
   color: #7f8c9b;
   line-height: 150%;
   text-overflow: ellipsis;
+  font-family: 'Avenir', sans-serif;
 }
 
 .tags {
   display: flex;
-  justify-content: space-around;
+  gap: 10px;
 }
 
+.welcome-courses{
+  text-align: center;
+  font-family: 'Athelas', serif;
+}
 
+.newcourse{
+  font-size: 24px;
+  font-family: 'Avenir', sans-serif;
+}
+
+.cs{
+  border: 1px solid #000; 
+  margin: 10px; 
+  background-color: #DDBA88; 
+  padding: 10px; 
+  display: flex;
+}

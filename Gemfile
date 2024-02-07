@@ -78,8 +78,12 @@ end
 
 # For stripe
 gem 'dotenv-rails'
+
+
+gem 'gon'
 gem 'pay', '~> 7.1'
 gem 'stripe'
 
-# rubocop
-gem 'rubocop', require: false
+# For Rubocop
+gem 'rubocop', '~> 1.60'
+

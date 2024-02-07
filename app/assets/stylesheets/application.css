@@ -18,3 +18,9 @@ body {
     margin: 0px;
     /* background-color: rgb(182, 37, 37); */
 }
+
+.alerts {
+    background-color: lightgreen;
+    padding: 10px;
+    text-align: center;
+}
