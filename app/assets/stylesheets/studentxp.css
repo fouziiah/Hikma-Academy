@@ -52,3 +52,10 @@
     color: #BE1E2E; 
     font-family: 'Athelas', serif;
 }
+
+.testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 40px;
+  }

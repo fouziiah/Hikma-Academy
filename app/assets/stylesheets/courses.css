@@ -80,3 +80,16 @@ body.course-page {
   text-align: center;
   font-family: 'Athelas', serif;
 }
+
+.newcourse{
+  font-size: 24px;
+  font-family: 'Avenir', sans-serif;
+}
+
+.cs{
+  border: 1px solid #000; 
+  margin: 10px; 
+  background-color: #DDBA88; 
+  padding: 10px; 
+  display: flex;
+}

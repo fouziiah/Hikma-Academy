@@ -1,8 +1,8 @@
+<% if user_signed_in? && current_user.role == Role.find_by(name: 'teacher') %>
+<%= link_to "Add new course", new_course_path, class: "newcourse" %>
+<% end %>
 <h1 class="welcome-courses"> Welcome to our courses!</h1>
 
-<% if user_signed_in? && current_user.role == Role.find_by(name: 'teacher') %>
-  <%= link_to "Add new course", new_course_path, style: "font-size: 24px;" %>
-<% end %>
 <div id="courses", class="course-container">
   <% @courses.sort_by(&:name).each do |course| %>
     <div class="card">
