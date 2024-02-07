@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CartsController < ApplicationController
   before_action :authenticate_user!
 
@@ -9,7 +11,7 @@ class CartsController < ApplicationController
     @product = Product.find_by(id: params[:id])
     quantity = params[:quantity].to_i
     current_orderable = @cart.orderables.find_by(product_id: @product.id)
-    if current_orderable && quantity > 0
+    if current_orderable && quantity.positive?
       current_orderable.update(quantity:)
     elsif quantity <= 0
       current_orderable.destroy
@@ -43,25 +45,21 @@ class CartsController < ApplicationController
       @cart.cart_products.each do |cart_product|
         Enrollment.find_or_create_by(user: current_user, course: cart_product.product.course)
       end
-      flash[:notice] = "Purchase successful! You are now enrolled in the courses."
+      flash[:notice] = 'Purchase successful! You are now enrolled in the courses.'
       redirect_to courses_path
     else
-      flash[:alert] = "There was a problem processing your payment."
+      flash[:alert] = 'There was a problem processing your payment.'
       render :show
     end
   end
 
   def destroy
     @cart.cart_products.destroy_all
-    flash[:notice] = "Your cart has been emptied."
+    flash[:notice] = 'Your cart has been emptied.'
     redirect_to cart_path
   end
 
   private
 
-  def payment_successful(cart)
-      
-      
-  end
+  def payment_successful(cart); end
 end
-  

@@ -1,14 +1,15 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class ChildrenController < ApplicationController
-  before_action :set_child, only: [:show, :edit, :update, :destroy]
+  before_action :set_child, only: %i[show edit update destroy]
 
   def index
     @children = Child.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @child = Child.new
@@ -24,8 +25,7 @@ class ChildrenController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @child.update(child_params)
@@ -50,4 +50,3 @@ class ChildrenController < ApplicationController
     params.require(:child).permit(:first_name, :last_name, :date_of_birth, :user_id)
   end
 end
-
