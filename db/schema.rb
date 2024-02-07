@@ -12,9 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema[7.1].define(version: 2024_02_06_193325) do
-
+ActiveRecord::Schema[7.1].define(version: 20_240_206_193_325) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -231,30 +229,28 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_06_193325) do
     t.datetime 'updated_at', null: false
   end
 
-
-  create_table "payments", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.integer "amount"
-    t.string "course_ids"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_payments_on_user_id"
+  create_table 'payments', force: :cascade do |t|
+    t.string 'first_name'
+    t.string 'last_name'
+    t.string 'email'
+    t.integer 'amount'
+    t.string 'course_ids'
+    t.bigint 'user_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['user_id'], name: 'index_payments_on_user_id'
   end
 
-  create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.integer "price"
-    t.string "payment_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "stripe_product_id"
-    t.string "stripe_price_id"
-    t.bigint "course_id"
-    t.index ["course_id"], name: "index_products_on_course_id"
-
+  create_table 'products', force: :cascade do |t|
+    t.string 'name'
+    t.integer 'price'
+    t.string 'payment_type'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'stripe_product_id'
+    t.string 'stripe_price_id'
+    t.bigint 'course_id'
+    t.index ['course_id'], name: 'index_products_on_course_id'
   end
 
   create_table 'roles', force: :cascade do |t|
@@ -294,23 +290,21 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_06_193325) do
     t.index ['role_id'], name: 'index_users_on_role_id'
   end
 
-
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "children", "users"
-  add_foreign_key "courses", "children"
-  add_foreign_key "courses", "users"
-  add_foreign_key "courses", "users", column: "teacher_id"
-  add_foreign_key "enrollments", "courses"
-  add_foreign_key "enrollments", "users"
-  add_foreign_key "orderables", "carts"
-  add_foreign_key "orderables", "products"
-  add_foreign_key "pay_charges", "pay_customers", column: "customer_id"
-  add_foreign_key "pay_charges", "pay_subscriptions", column: "subscription_id"
-  add_foreign_key "pay_payment_methods", "pay_customers", column: "customer_id"
-  add_foreign_key "pay_subscriptions", "pay_customers", column: "customer_id"
-  add_foreign_key "payments", "users"
-  add_foreign_key "products", "courses"
-  add_foreign_key "users", "roles"
-
+  add_foreign_key 'active_storage_attachments', 'active_storage_blobs', column: 'blob_id'
+  add_foreign_key 'active_storage_variant_records', 'active_storage_blobs', column: 'blob_id'
+  add_foreign_key 'children', 'users'
+  add_foreign_key 'courses', 'children'
+  add_foreign_key 'courses', 'users'
+  add_foreign_key 'courses', 'users', column: 'teacher_id'
+  add_foreign_key 'enrollments', 'courses'
+  add_foreign_key 'enrollments', 'users'
+  add_foreign_key 'orderables', 'carts'
+  add_foreign_key 'orderables', 'products'
+  add_foreign_key 'pay_charges', 'pay_customers', column: 'customer_id'
+  add_foreign_key 'pay_charges', 'pay_subscriptions', column: 'subscription_id'
+  add_foreign_key 'pay_payment_methods', 'pay_customers', column: 'customer_id'
+  add_foreign_key 'pay_subscriptions', 'pay_customers', column: 'customer_id'
+  add_foreign_key 'payments', 'users'
+  add_foreign_key 'products', 'courses'
+  add_foreign_key 'users', 'roles'
 end
