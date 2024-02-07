@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Product < ApplicationRecord
     has_many :cart_products
     has_many :orderables, dependent: :destroy
