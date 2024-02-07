@@ -13,7 +13,9 @@
 # db/seeds.rb
 # Create the student role
 
-# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
 # Create footer content
 TextContent.find_or_create_by(location: 'footer_address', title: 'Footer Address') do |content|

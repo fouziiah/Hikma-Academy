@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+
   post 'payments/create'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -27,6 +28,8 @@ Rails.application.routes.draw do
   get '/teacher', to: 'teacher#index'
   get '/teacher/students', to: 'teacher#students'
   get '/teacher/courses', to: 'teacher#courses'
+  
+  get '/teachers', to: 'teachers#index', as: 'all_teachers'
 
   get 'cart', to: 'carts#show'
   post 'carts/add'
