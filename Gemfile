@@ -78,6 +78,9 @@ end
 
 # For stripe
 gem 'dotenv-rails'
-gem 'pay', '~> 7.1'
-gem 'rubocop', '~> 1.60'
 gem 'stripe'
+gem 'gon'
+gem "pay", "~> 7.1"
+
+# For Rubocop
+gem 'rubocop', '~> 1.60'

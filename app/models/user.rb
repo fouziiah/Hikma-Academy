@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :courses, through: :enrollments
   has_many :teaching_courses, class_name: 'Course', foreign_key: 'teacher_id'
   has_many :enrolled_courses, through: :enrollments, source: :course
+  has_many :payments
   has_one_attached :image
 
   # Include default devise modules. Others available are:
