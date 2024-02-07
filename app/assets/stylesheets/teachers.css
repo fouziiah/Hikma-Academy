@@ -1,0 +1,61 @@
+.teachers-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px; 
+  }
+  .teachers-page-title {
+    text-align: center;
+    font-size: 36px;
+    font-family: 'Athelas', serif;
+    color:#BE1E1E 
+  }
+  
+  
+  .teacher {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .teacher-content {
+    padding: 20px; 
+  }
+  
+  .teacher-info {
+    margin-top: 10px;
+    padding: 15px;
+    font-family: 'Avenir', sans-serif;
+    color: black;
+  }
+  
+  .teacher-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+  }
+  
+  .teachers-container {
+    text-align: center;
+   font-family: 'Athelas', serif;
+   color:#BE1E1E ;
+  }
+
+  @media screen and (max-width: 768px) {
+    .teachers-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .teacher {
+      width: 90%;
+    }
+  
+    .teacher-info {
+      padding: 10px;
+    }
+  }
+  
