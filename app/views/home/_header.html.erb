@@ -1,6 +1,6 @@
 <header>
   <a href="<%= root_path %>">
-    <img class="headlogo" src="<%= asset_path('OnlyLogoFullColor.png') %>">
+    <img class="headlogo" src="<%= asset_path('hikma_VerticalNoTag.png') %>">
   </a>
   <ul class="nav-links">
     <% if user_signed_in? %>
@@ -15,8 +15,11 @@
     <li><%= link_to 'Courses', courses_path, class: 'custom-link' %></li>
     <li><%= link_to 'Student Experience', studentxp_index_path, class: 'custom-link' %></li>
 
-    <li><a href="<%= cart_path %>"><img class="cart" src="<%= asset_path('cart.png') %>" alt="cart"></a></li>
-
+    <% if user_signed_in? && current_user.role == Role.find_by(name: 'teacher') %>
+      <li><a href="<%= new_admin_user_session_path %>" class='custom-link'>Admin</a></li>
+    <% elsif user_signed_in? && current_user.role == Role.find_by(name: 'student') %>
+      <li><a href="<%= cart_path %>"><img class="cart" src="<%= asset_path('cart.png') %>" alt="cart"></a></li>
+    <% end %>
     <li><%= link_to 'Donate', 'https://donorbox.org/support-hikma-academy', class: "donate-button" %></li>
 
     <% if user_signed_in? %>
