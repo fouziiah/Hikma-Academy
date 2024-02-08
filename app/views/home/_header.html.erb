@@ -13,7 +13,7 @@
 
     <li><%= link_to 'About', about_path, class: 'custom-link' %></li>
     <li><%= link_to 'Courses', courses_path, class: 'custom-link' %></li>
-    <li><%= link_to 'Teachers', teachers_path, class: 'custom-link' %></li>
+    <li><%= link_to 'Teachers', all_teachers_path, class: 'custom-link' %></li>
     <li><%= link_to 'Student Experience', studentxp_index_path, class: 'custom-link' %></li>
     
 
@@ -23,7 +23,7 @@
     <% elsif user_signed_in? && current_user.role == Role.find_by(name: 'student') %>
       <li><a href="<%= cart_path %>"><img class="cart" src="<%= asset_path('cart.png') %>" alt="cart"></a></li>
     <% end %>
-    <li><%= link_to 'Donate', 'https://donorbox.org/support-hikma-academy', class: "donate-button" %></li>
+    <li><%= link_to 'Donate', 'https://donorbox.org/support-hikma-academy', class: "donate-button"%></li>
 
     <% if user_signed_in? %>
       <li><%= button_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
