@@ -5,7 +5,7 @@
 
 <div id="courses", class="course-container">
   <% @courses.sort_by(&:name).each do |course| %>
-    <div class="card">
+    <div class="card" onclick="window.location.href='<%= course_path(course) %>'" style = "cursor:pointer">
       <% if course.image.attached? %>
         <%= link_to(course_path(course)) do %>
           <%= image_tag(course.image, class: 'img') %>
