@@ -11,20 +11,23 @@
 }
 
 .core-container img {
-  display: inline-block; 
-  max-width: 100%; 
+  max-width: 100%; /* Ensures the image doesn't exceed its container's width */
+  height: auto; /* Allows the image to maintain its aspect ratio */
+  display: block; /* Ensures the image is displayed as a block element */
+  margin: 0 auto; /* Centers the image horizontally within its container */
+  padding: 5px; /* Example padding */
 }
+
 
 .content-box {
   border: 1px solid #ccc;
-  padding: 10px; 
-  margin-bottom: 20px; 
-  width: calc(50% - 20px); 
-  box-sizing: border-box; 
-  vertical-align: top; 
+  padding: 10px;
+  margin-bottom: 20px;
+  width: calc(50% - 22px); /* Adjusted width to account for border and padding */
+  height: 150px; /* Set a fixed height */
+  box-sizing: border-box;
+  vertical-align: top;
   font-family: 'Avenir', sans-serif;
-  
-
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
@@ -47,12 +50,10 @@
     margin: 10px auto; 
   }
 }
+.content-box p {
+  text-align: center;
+}
 
-
-
-  
-  
-  
 
 
 
