@@ -79,11 +79,9 @@ end
 # For stripe
 gem 'dotenv-rails'
 
-
 gem 'gon'
 gem 'pay', '~> 7.1'
 gem 'stripe'
 
 # For Rubocop
 gem 'rubocop', '~> 1.60'
-

@@ -26,4 +26,5 @@ ActiveAdmin.register User do
   remove_filter :payment_processor
   remove_filter :image_attachment
   remove_filter :image_blob
+  remove_filter :payments
 end
