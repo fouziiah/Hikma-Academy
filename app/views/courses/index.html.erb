@@ -1,11 +1,34 @@
 <% if user_signed_in? && current_user.role == Role.find_by(name: 'teacher') %>
-<%= link_to "Add new course", new_course_path, class: "newcourse" %>
+  <%= link_to "Add new course", new_course_path, class: "generic-button" %>
 <% end %>
+
 <h1 class="welcome-courses"> Welcome to our courses!</h1>
 
 <div id="courses", class="course-container">
-  <% @courses.sort_by(&:name).each do |course| %>
-    <div class="card" onclick="window.location.href='<%= course_path(course) %>'" style = "cursor:pointer">
+  <% @courses.reject(&:archived?).sort_by(&:name).each do |course| %>
+    <div class="card" onclick="window.location.href='<%= course_path(course) %>'" style="cursor:pointer">
+      <% if course.image.attached? %>
+        <%= link_to(course_path(course)) do %>
+          <%= image_tag(course.image, class: 'img') %>
+        <% end %>
+      <% end %>
+
+      <div class="tags">
+        <span class="tag"><%= course.format %></span>
+        <span class="tag"><%= course.status %></span>
+      </div>
+      <hr>
+      <div class="name"><%= course.name %></div>
+      <p class="p">Description: <%= course.description %></p>
+    </div>
+  <% end %>
+</div>
+
+<h1 class = "welcome-courses">Take a look at some of our previous courses...</h1>
+
+<div id="archived-courses", class="course-container">
+  <% @courses.select(&:archived?).sort_by(&:name).each do |course| %>
+    <div class="card archived" onclick="window.location.href='<%= course_path(course) %>'" style="cursor:pointer">
       <% if course.image.attached? %>
         <%= link_to(course_path(course)) do %>
           <%= image_tag(course.image, class: 'img') %>

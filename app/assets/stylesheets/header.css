@@ -73,3 +73,12 @@ button:hover {
     width: 135px;
     height: 90px;
 }
+
+.generic-button{
+    background-color: white;
+    border: solid 2px rgba(190, 30, 30, 1);
+    color: #000000;
+    cursor: pointer; 
+    padding: 5.6px 20px;
+    border-radius: 50px;
+}
