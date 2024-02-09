@@ -2,7 +2,7 @@
   <%= link_to "Add new course", new_course_path, class: "generic-button" %>
 <% end %>
 
-<h1 class="welcome-courses"> Welcome to our courses!</h1>
+<h1 class="welcome-courses"> Welcome to our courses</h1>
 
 <div id="courses", class="course-container">
   <% @courses.reject(&:archived?).sort_by(&:name).each do |course| %>
