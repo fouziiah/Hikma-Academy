@@ -57,20 +57,25 @@
       <%= form.select :format, Course.formats.keys %>
     </div>
 
-    <div class="edit-add">
-      <%= form.label :payment_type, style: "display: block" %>
-      <%= form.select :payment_type, Course.payment_types.keys %>
-    </div>
+    <% if action_name != 'edit' %>
+      <!-- Render payment_type field only in the new action -->
+      <div class="edit-add">
+        <%= form.label :payment_type, style: "display: block" %>
+        <%= form.select :payment_type, Course.payment_types.keys %>
+      </div>
+    <% end %>
 
     <div class="edit-add">
       <% form.label :user_id, style: "display: block" %>
       <%= form.text_field :user_id, value:current_user.id, type: :hidden %>
     </div>
 
-    <div class="edit-add">
-      <%= form.label :price, style: "display: block" %>
-      <%= form.number_field :price , placeholder: "Course price" %>
-    </div>
+    <% if action_name != 'edit' %>
+      <div class="edit-add">
+        <%= form.label :price, style: "display: block" %>
+        <%= form.number_field :price , placeholder: "Course price" %>
+      </div>
+    <%end%>
 
     <div class="edit-add">
       <%= form.file_field :image %>

@@ -12,14 +12,19 @@
 
     <div class="buy-add">
       <% unless @course.archived? %>
-        <%= render partial: 'pay/stripe/checkout_button', locals: {
-          session: @checkout_session, 
-          title: "Checkout"
-        } %> 
-        <%= form_with(url: carts_add_path) do |f| %>
-          <%= f.hidden_field :id, value: @course.product.id %>
-          <%= f.number_field :quantity, value: 1, min: 1, type: :hidden %>
-          <%= f.submit "Add to cart", class: "generic-button" %>
+        <%if @course.recurring?%>
+          <%= render partial: 'pay/stripe/checkout_button', locals: {
+            session: @checkout_session, 
+            title: "Checkout"
+          } %> 
+          <%= link_to "Back", courses_path, class: "generic-button", style: "float: right;"%>
+          <%else%>
+          <%= form_with(url: carts_add_path) do |f| %>
+            <%= f.hidden_field :id, value: @course.product.id %>
+            <%= f.number_field :quantity, value: 1, min: 1, type: :hidden %>
+            <%= f.submit "Add to cart", class: "generic-button" %>
+            <%= link_to "Back", courses_path, class: "generic-button"%>
+          <% end %>
         <% end %>
       <% end %>
     </div>
