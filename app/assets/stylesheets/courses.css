@@ -121,3 +121,8 @@ body.course-page {
   text-align: left;
 }
 
+.buy-add {
+  display: flex;
+  gap: 5px;
+  margin: 10px;
+}
