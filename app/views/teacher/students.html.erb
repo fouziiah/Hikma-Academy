@@ -16,46 +16,48 @@
     </ul>
   </div>
 
-
   <div class="main-content">
-    <h1>Students</h1>
-    <% if @students.any? %>
-      <table class="student-table">
+  <h1>Students</h1>
+  <% if @students.any? %>
+    <table class="student-table">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Course(s)</th>
+        <th>Price(s)</th>
+      </tr>
+      <% @students.each do |student| %>
         <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-          <th>Course</th>
-          <th>Price</th>
-        </tr>
-        <% @students.each do |student| %>
-          <tr>
-            <td data-label="First Name"><%= student.first_name %></td>
-            <td data-label="Last Name"><%= student.last_name %></td>
-            <td data-label="Email"><%= student.email %></td>
-            <td data-label="Course Name">
-              <% if student.courses.any? %>
-                <%= student.courses.first.name %>
-                <% if student.courses.count > 1 %>
-                  <span title="<%= student.courses.pluck(:name).join(', ') %>">+</span>
+          <td data-label="First Name"><%= student.first_name %></td>
+          <td data-label="Last Name"><%= student.last_name %></td>
+          <td data-label="Email"><%= student.email %></td>
+          <td data-label="Course Name">
+            <% if student.courses.any? %>
+              <ul>
+                <% student.courses.each do |course| %>
+                  <li><%= course.name %></li>
                 <% end %>
-              <% else %>
-                No courses enrolled
-              <% end %>
-            </td>
-            <td data-label="Price">
-              <% if student.courses.any? %>
-                <%= number_to_currency(student.courses.first.price) %>
-              <% else %>
-                N/A
-              <% end %>
-            </td>
-          </tr>
-        <% end %>
-      </table>
-    <% else %>
-      <p>You have no students.</p>
-    <% end %>
-  </div>
+              </ul>
+            <% else %>
+              No courses enrolled
+            <% end %>
+          </td>
+          <td data-label="Price">
+            <% if student.courses.any? %>
+              <ul>
+                <% student.courses.each do |course| %>
+                  <li><%= number_to_currency(course.price) %></li>
+                <% end %>
+              </ul>
+            <% else %>
+              N/A
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  <% else %>
+    <p>You have no students.</p>
+  <% end %>
 </div>
-
