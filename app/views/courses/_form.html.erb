@@ -1,81 +1,83 @@
-<%= form_with(model: course) do |form| %>
-  <% if course.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
+<div class="form-container">
+  <%= form_with(model: course) do |form| %>
+    <% if course.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
 
-      <ul>
-        <% course.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% course.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="edit-add">
+      <%= form.label :name, style: "display: block" %>
+      <%= form.text_field :name, placeholder: "Course name" %>
+    </div>
+
+    <div class="edit-add">
+      <%= form.label :description, style: "display: block" %>
+      <%= form.text_area :description, placeholder: "Course description" %>
+    </div>
+
+    <div class="edit-add">
+      <%= form.label :status, style: "display: block" %>
+      <%= form.select :status, Course.statuses.keys %>
+    </div>
+
+    <div class="edit-add">
+      <%= form.label :capacity, style: "display: block" %>
+      <%= form.text_field :capacity, placeholder: "Course capacity" %>
+    </div>
+
+    <div class="edit-add">
+      <%= form.label :start_date, style: "display: block" %>
+      <%= form.date_field :start_date %>
+    </div>
+
+    <div class="edit-add">
+      <%= form.label :end_date, style: "display: block" %>
+      <%= form.date_field :end_date %>
+    </div>
+
+    <div class="edit-add">
+      <%= form.label :location, style: "display: block" %>
+      <%= form.text_field :location , placeholder: "Course location" %>
+    </div>
+
+    <div class="edit-add">
+      <%= form.label :course_type, style: "display: block" %>
+      <%= form.select :course_type, Course.course_types.keys %>
+    </div>
+
+    <div class="edit-add">
+      <%= form.label :format, style: "display: block" %>
+      <%= form.select :format, Course.formats.keys %>
+    </div>
+
+    <div class="edit-add">
+      <%= form.label :payment_type, style: "display: block" %>
+      <%= form.select :payment_type, Course.payment_types.keys %>
+    </div>
+
+    <div class="edit-add">
+      <% form.label :user_id, style: "display: block" %>
+      <%= form.text_field :user_id, value:current_user.id, type: :hidden %>
+    </div>
+
+    <div class="edit-add">
+      <%= form.label :price, style: "display: block" %>
+      <%= form.number_field :price , placeholder: "Course price" %>
+    </div>
+
+    <div class="edit-add">
+      <%= form.file_field :image %>
+    </div>
+
+    <div class="edit-add">
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
-    <%= form.label :status, style: "display: block" %>
-    <%= form.select :status, Course.statuses.keys %>
-  </div>
-
-  <div>
-    <%= form.label :capacity, style: "display: block" %>
-    <%= form.text_field :capacity %>
-  </div>
-
-  <div>
-    <%= form.label :start_date, style: "display: block" %>
-    <%= form.date_field :start_date %>
-  </div>
-
-  <div>
-    <%= form.label :end_date, style: "display: block" %>
-    <%= form.date_field :end_date %>
-  </div>
-
-  <div>
-    <%= form.label :location, style: "display: block" %>
-    <%= form.text_field :location %>
-  </div>
-
-  <div>
-    <%= form.label :course_type, style: "display: block" %>
-    <%= form.select :course_type, Course.course_types.keys %>
-  </div>
-
-  <div>
-    <%= form.label :format, style: "display: block" %>
-    <%= form.select :format, Course.formats.keys %>
-  </div>
-
-  <div>
-    <%= form.label :payment_type, style: "display: block" %>
-    <%= form.select :payment_type, Course.payment_types.keys %>
-  </div>
-
-  <div>
-    <% form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id, value:current_user.id, type: :hidden %>
-  </div>
-
-  <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.number_field :price %>
-  </div>
-
-  <div>
-    <%= form.file_field :image %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
