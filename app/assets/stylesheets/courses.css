@@ -8,8 +8,8 @@ body.course-page {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    margin-top: 10vh;
-    padding: 10vh;
+    margin-top: 0vh;
+    padding: 5vh;
     font-family: 'Avenir', sans-serif;
 }
 
@@ -93,3 +93,31 @@ body.course-page {
   padding: 10px; 
   display: flex;
 }
+
+.card.archived {
+  opacity: 0.6; 
+}
+
+.edit-delete-buttons {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin: 10px;
+}
+
+.edit-add {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.edit-add input{
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.edit-add label{
+  text-align: left;
+}
+

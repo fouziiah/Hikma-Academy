@@ -1,10 +1,10 @@
-<h1>Editing course</h1>
+<h1 style="text-align: center;">Editing course</h1>
 
 <%= render "form", course: @course %>
 
 <br>
 
-<div>
-  <%= link_to "Show this course", @course %> |
-  <%= link_to "Back to courses", courses_path %>
+<div class="edit-delete-buttons">
+  <%= link_to "Show this course", @course, class: "generic-button" %> 
+  <%= link_to "Back to courses", courses_path, class: "generic-button" %>
 </div>

@@ -2,16 +2,20 @@
 
 <div>
   <% if user_signed_in? && current_user.role == Role.find_by(name: 'teacher') %>
-    <%= link_to "Edit this course", edit_course_path(@course) %>
+    <div class="edit-delete-buttons">
+    <%= link_to "Edit this course", edit_course_path(@course), class: "generic-button" %>
     <%= button_to "Delete this course", @course, method: :delete %>
+  </div>
   <% end %>
 
   <% if user_signed_in? && current_user.role == Role.find_by(name: 'student') %>
-    <%= link_to "Buy Course", checkout_path(course_id: @course.id) %>
+  <div class="edit-delete-buttons">
+    <%= link_to "Buy Course", checkout_path(course_id: @course.id), class: "generic-button" %>
     <%= form_with(url: carts_add_path) do |f| %>
       <%= f.hidden_field :id, value: @course.product.id %>
       <%= f.number_field :quantity, value: 1, min: 1, type: :hidden %>
-      <%= f.submit "Add to cart" %>
+      <%= f.submit "Add to cart", class: "generic-button" %>
+  </div>
     <% end %>
   <% end %>
 </div>
