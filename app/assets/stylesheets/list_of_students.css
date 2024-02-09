@@ -3,8 +3,6 @@
     min-height: 100vh; 
 }
 
-
-
 .user-profile {
     text-align: center;
     padding: 20px;
@@ -24,25 +22,25 @@
   }
 
 .student-table {
-    width: 97%;
+    width: 100%;
     margin-left: 9px;
     border-collapse: collapse;
     margin-top: 20px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     background-color: white; 
+    border-collapse: collapse; 
   }
   
   .student-table th {
-    background-color: #bfa07b; 
+    background-color: black; 
     color: white;
     text-align: left;
-    padding: 12px 15px;
     font-size: 16px;
-    border-bottom: 1px solid #ddd; 
+
   }
   
 
-  .student-table td {
+  .student-table th, .student-table td {
     padding: 12px 15px;
     border-bottom: 1px solid #ddd; 
   }
@@ -57,6 +55,9 @@
     border-bottom: none;
   }
   
+  .student-table li {
+    list-style-type: none; 
+  }
 
   @media screen and (max-width: 600px) {
     .student-table, .student-table thead, .student-table tbody, .student-table th,.student-table tr { 
@@ -64,7 +65,8 @@
     }
   
     .student-table th {
-      text-align: inherit; 
+      /* text-align: inherit;  */
+      text-align: left;
     }
   
 

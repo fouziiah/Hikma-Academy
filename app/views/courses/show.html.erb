@@ -9,8 +9,10 @@
   <% end %>
 
   <% if user_signed_in? && current_user.role == Role.find_by(name: 'student') %>
-  <div class="edit-delete-buttons">
-    <%= link_to "Buy Course", checkout_path(course_id: @course.id), class: "generic-button" %>
+  <%= render partial: 'pay/stripe/checkout_button', locals: {
+    session: @checkout_session, 
+    title: "checkout"
+  } %> 
     <%= form_with(url: carts_add_path) do |f| %>
       <%= f.hidden_field :id, value: @course.product.id %>
       <%= f.number_field :quantity, value: 1, min: 1, type: :hidden %>

@@ -9,14 +9,26 @@ class CoursesController < ApplicationController
   end
 
   # GET /courses/1 or /courses/1.json
-  def show; end
 
-  # GET /courses/new
+  def show
+    Stripe.api_key = ENV['STRIPE_SECRET_KEY']
+
+    current_user.set_payment_processor(:stripe)
+    current_user.payment_processor.pay_customer
+
+    @checkout_session = current_user
+                        .payment_processor
+                        .checkout(
+                          mode: @course.recurring? ? 'subscription' : 'payment',
+                          line_items: @course.product.stripe_price_id,
+                          success_url: courses_url
+                        )
+  end
+
   def new
     @course = Course.new
   end
 
-  # GET /courses/1/edit
   def edit; end
 
   # POST /courses or /courses.json
