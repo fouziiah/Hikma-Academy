@@ -11,6 +11,7 @@ class Course < ApplicationRecord
 
   validates :image, presence: true
   validates :format, presence: true
+  validates :price, presence: true
 
   enum status: { open: 0, closed: 1, archived: 3 }
   enum course_type: { regular: 0, workshop: 1, retreat: 3 }
