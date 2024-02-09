@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const cardElement = elements.create('card');
     cardElement.mount('#card-element');
   
-    // Selecting the donation form
+    // Selecting the form
     const form = document.getElementById('checkout-form');
   
     // Handling form submission

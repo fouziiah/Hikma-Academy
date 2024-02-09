@@ -16,6 +16,10 @@
       <div class="tags">
         <span class="tag"><%= course.format %></span>
         <span class="tag"><%= course.status %></span>
+        <%if course.recurring?%>
+        <span class="tag">subscription</span>
+        <% end %>
+        
       </div>
       <hr>
       <div class="name"><%= course.name %></div>
@@ -24,7 +28,7 @@
   <% end %>
 </div>
 
-<h1 class = "welcome-courses">Take a look at some of our previous courses...</h1>
+<h1 class = "welcome-courses">Our previous courses...</h1>
 
 <div id="archived-courses", class="course-container">
   <% @courses.select(&:archived?).sort_by(&:name).each do |course| %>

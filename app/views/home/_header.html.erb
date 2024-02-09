@@ -3,6 +3,11 @@
     <img class="headlogo" src="<%= asset_path('logo/hikma_VerticalNoTag.png') %>">
   </a>
   <ul class="nav-links">
+    <li><%= link_to 'Home', root_path, class: 'custom-link' %></li>
+    <li><%= link_to 'About', about_path, class: 'custom-link' %></li>
+    <li><%= link_to 'Courses', courses_path, class: 'custom-link' %></li>
+    <li><%= link_to 'Staff', all_teachers_path, class: 'custom-link' %></li>
+    <li><%= link_to 'Student Experience', studentxp_index_path, class: 'custom-link' %></li>
     <% if user_signed_in? %>
       <% if current_user.role == Role.find_by(name: 'teacher') %>
         <li><%= link_to 'Dashboard', teacher_courses_path, class: 'custom-link' %></li>
@@ -10,11 +15,6 @@
         <li><%= link_to 'Dashboard', students_path, class: 'custom-link' %></li>
       <% end %>
     <% end %>
-
-    <li><%= link_to 'About', about_path, class: 'custom-link' %></li>
-    <li><%= link_to 'Courses', courses_path, class: 'custom-link' %></li>
-    <li><%= link_to 'Staff', all_teachers_path, class: 'custom-link' %></li>
-    <li><%= link_to 'Student Experience', studentxp_index_path, class: 'custom-link' %></li>
     
 
 

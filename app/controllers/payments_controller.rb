@@ -6,12 +6,23 @@ class PaymentsController < ApplicationController
   def create
     @payment = Payment.new(payment_params)
 
+    product_ids = []
+    courses = @payment.course_ids.split(',').map(&:to_i)
+    courses.each do |course_id|
+      product = Product.find_by(course_id: course_id)
+      product_ids << product.name
+    end
+
     # charge user card
     Stripe::Charge.create({
                             amount: @payment.amount * 100, # convert to cents
                             currency: 'usd',
                             source: params[:stripe_token],
-                            description: 'Hikma Academy Course'
+                            description: 'Hikma Academy Course',
+                            metadata: {
+                              COURSES: product_ids.to_json,
+                              CUSTOMER: "#{@payment.first_name.capitalize} #{@payment.last_name.capitalize} | #{@payment.email}"
+                            }
                           })
 
     @payment.save
