@@ -9,7 +9,7 @@ class PaymentsController < ApplicationController
     product_ids = []
     courses = @payment.course_ids.split(',').map(&:to_i)
     courses.each do |course_id|
-      product = Product.find_by(course_id: course_id)
+      product = Product.find_by(course_id:)
       product_ids << product.name
     end
 

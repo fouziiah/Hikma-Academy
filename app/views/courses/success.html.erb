@@ -1,0 +1,32 @@
+<div class="jumbotron">
+  <h2>Transaction Total: <%= number_to_currency(@session.amount_total.to_f / 100) %></h2>
+  <table class="course-table">
+    <thead>
+      <tr>
+        <th>Course Name</th>
+        <th>Type</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @line_items.each do |item| %>
+        <% if item.description %>
+          <% course = Course.find_by(name: item.description) %>
+          <tr>
+            <td><%= course.name %></td>
+            <% if course.recurring? %>
+              <td>Monthly Subscription</td>
+            <% else %>
+              <td>One-time</td>
+            <% end %>
+            <td><%= number_to_currency(course.price) %></td>
+          </tr>
+          <% unless current_user.enrolled_in?(course) %>
+            <% Enrollment.create(user_id: current_user.id, course_id: course.id) %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  <p>Thanks for your payment! Click here to go to your <%= link_to 'dashboard', students_path %></p>
+</div>
