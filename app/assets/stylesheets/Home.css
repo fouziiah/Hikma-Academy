@@ -3,7 +3,7 @@
     text-align: center;
     font-family: 'Athelas', serif;
     position: absolute;
-    bottom: 45%; 
+    bottom: 54%; 
     z-index: 1;
     left: 0;
     right: 0; 
@@ -18,6 +18,15 @@
   margin-bottom: 0.5em;
   font-family: 'Avenir', sans-serif;
 }
+
+.welcome-message h1 {
+  font-size: 3rem; 
+}
+
+.welcome-message .quote {
+  font-style: italic;
+}
+
 
 .img-container {
     position: relative;
@@ -42,16 +51,6 @@ img.banner {
     object-fit: cover;
 }
 
-
-
-.welcome-message h1 {
-    font-size: 3rem; 
-}
-  
-.welcome-message .quote {
-    font-style: italic;
-}
-  
   
 
 .second-header-msg{
@@ -155,40 +154,43 @@ img.banner {
     color: #000000; 
 }
 
-.home_student_quote span {
-    font-size: 2.5rem;
-    text-align: center;
-    max-width: 80%;
-}
-.home_student_quote hr {
-    border: none; 
-    margin: 20px 0; 
-}
-
-
-
-.hand-raise{
-    width: 100%;
-    margin-left: 0;
-    display: inline-block;
-}
-
-img{
-    max-width: 100%;
-}
-
-.hand-raising-container {
-    width: 50%;
+  .home_student_quote span {
+      font-size: 2.5rem;
+      text-align: center;
+      max-width: 80%;
   }
+  .home_student_quote hr {
+      border: none; 
+      margin: 20px 0; 
+  }
+
+  /* ......................................................................... */
+
+  .hand-raise {
+    width: auto; 
+    max-width: 100%; 
+    height: 100%; 
+    min-width: 200px; 
+    object-fit: cover;
+  }
+
+  .side-by-side-containers {
+    display: flex;
+  }
+
+  .hand-raising-container {
+      width: 50%;
+    }
   
   .why-hikma-container {
     flex: 1;
     padding: 0 5em; 
+    margin: auto;
+
 
   }
-  /* ......................................................................... */
+
   .section-home-why {
-    display: flex;
     align-items: center;
     background-color: #ffffff;
   }
@@ -199,7 +201,7 @@ img{
   }
   
   .why-hikma-container p {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.6;
     margin-bottom: 20px;
   }
@@ -217,25 +219,13 @@ img{
   }
   
   .about-button:hover {
-    background-color: #9B0000;
+    background-color: #DDBA88;
   }
 
-  
-  @media screen and (max-width: 768px) {
-    .welcome-message {
-      bottom: 5%;
-    }
-    
-    img.banner {
-
-    }
-  }
+    /* ......................................................................... */
   
   @media screen and (max-width: 576px) {
-    .welcome-message {
-      bottom: 2%;
-    }
-  
+    
     .highlights {
       flex-direction: column;
       align-items: center;
@@ -245,11 +235,77 @@ img{
       width: 90%;
       margin-bottom: 2rem;
     }
-  
-    img.banner {
+
+    .side-by-side-containers {
+      flex-direction: column;
+    }
+    
+    .hand-raising-container,
+    .why-hikma-container {
+      width: 100%; 
+    }
+
+    .why-hikma-container h2 {
+      font-size: 2rem; 
+      margin-bottom: 8px; 
+    }
+    
+    .why-hikma-container p {
+      font-size: 16px; 
+      line-height: 1.5; 
+      margin-bottom: 16px; 
+    }
+    
+    .about-button {
+      font-size: 14px; 
+      padding: 8px 16px; 
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .hand-raising-container,
+    .why-hikma-container {
+      max-width: 100%; 
+      padding-right: 10px; 
+      padding-left: 0; 
+    }
+
+    .why-hikma-container h2 {
+      font-size: 2.5rem; 
+    }
+    
+    .why-hikma-container p {
+      font-size: 17px; 
+      line-height: 1.6; 
+    }
+    
+    .about-button {
+      font-size: 16px; 
+      padding: 10px 20px; 
     }
   }
   
+/* .............................................................................. */
+
+@media screen and (max-width: 768px) {
+  .welcome-message {
+    font-size: 1em;
+    bottom: 48%;
+  }
+
+  .welcome-message h1 {
+    font-size: 2.5rem;
+  }
+
+  .welcome-message .quote {
+    font-size: 1em;
+  }
+
+  .welcome-message .prophet {
+    font-size: 1em;
+  }
+}
+
 h1 h2 h3{
     font-family: 'Athelas', serif;
 }
