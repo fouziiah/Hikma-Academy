@@ -2,6 +2,7 @@
 
 class CoursesController < ApplicationController
   before_action :set_course, only: %i[show edit update destroy]
+  Stripe.api_key = ENV['STRIPE_SECRET_KEY']
 
   # GET /courses or /courses.json
   def index
@@ -11,19 +12,18 @@ class CoursesController < ApplicationController
   # GET /courses/1 or /courses/1.json
 
   def show
-    Stripe.api_key = ENV['STRIPE_SECRET_KEY']
-    unless current_user.nil?
-      current_user.set_payment_processor(:stripe)
-      current_user.payment_processor.pay_customer
+    return if current_user.nil?
 
-      @checkout_session = current_user
-                          .payment_processor
-                          .checkout(
-                            mode: @course.recurring? ? 'subscription' : 'payment',
-                            line_items: @course.product.stripe_price_id,
-                            success_url: students_url
-                          )
-    end 
+    current_user.set_payment_processor(:stripe)
+    current_user.payment_processor.pay_customer
+
+    @checkout_session = current_user
+                        .payment_processor
+                        .checkout(
+                          mode: @course.recurring? ? 'subscription' : 'payment',
+                          line_items: @course.product.stripe_price_id,
+                          success_url: checkout_success_url
+                        )
   end
 
   def new
@@ -83,6 +83,12 @@ class CoursesController < ApplicationController
       format.html { redirect_to courses_url, alert: e.message }
       format.json { render json: { error: e.message }, status: :unprocessable_entity }
     end
+  end
+
+  def success
+    @session = Stripe::Checkout::Session.retrieve(params[:session_id])
+    @line_items = Stripe::Checkout::Session.list_line_items(params[:session_id])
+    flash[:notice] = 'Payment successful'
   end
 
   private

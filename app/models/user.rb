@@ -59,4 +59,8 @@ class User < ApplicationRecord
       updated_at
     ]
   end
+
+  def enrolled_in?(course)
+    courses.exists?(id: course.id)
+  end
 end

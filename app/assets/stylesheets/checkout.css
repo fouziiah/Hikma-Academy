@@ -1,0 +1,31 @@
+.course-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .course-table th, .course-table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  .course-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .course-table th {
+    background-color: #dddddd;
+  }
+
+  .rounded-button {
+    border-radius: 50px;
+    background-color: #6772E5; /* Green background color */
+    color: white; /* Text color */
+    padding: 5.6px 20px; /* Padding for the button */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline from the text */
+    display: inline-block; /* Make it behave like a block element */
+}
+
+
+  
