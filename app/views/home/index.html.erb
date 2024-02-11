@@ -1,6 +1,6 @@
 <div class="font">
 <div class="img-container">
-  <img class="banner" src="<%= asset_path('banner.png') %>" alt="banner-image">
+  <img class="banner" src="<%= asset_path('banner.JPG') %>" alt="banner-image">
   </div>
   <div class="welcome-message">
     <h1><%= TextContent.find_by(location: "welcome_message_title")&.body %></h1>
@@ -24,25 +24,26 @@
       <a href="<%= courses_path %>" class="learn-more ">Learn More →</a>
     </div>
   </div>
-  <div class="home_student_quote"> 
-  <span>"My experience with Hikma academy has been an amazing, powerful, and very educational journey. What I enjoyed the most about this program is the fact each chapter or Surah we learned each week had applied to my daily life" - Bahja Mohamud</span>
+  <div class="home_student_quote">
+  <span><span class="quotation">&ldquo;</span>My experience with Hikma academy has been an amazing, powerful, and very educational journey. What I enjoyed the most about this program is the fact each chapter or Surah we learned each week had applied to my daily life&rdquo; - Bahja Mohamud</span>
   <hr>
-  </div>
+</div>
+
 <div>
 
 <div class="section-home-why">
-
-  <div class="hand-raising-container">
-  <%= image_tag("hand-raising.png", class: "hand-raise", alt: "hand raising") %>
+  <div class="side-by-side-containers">
+    <div class="hand-raising-container">
+      <%= image_tag("hand-raising.png", class: "hand-raise", alt: "hand raising") %>
+    </div>
+    <div class="why-hikma-container">
+      <h2>Is Hikma right for you?</h2>
+      <p>We believe in the power of reflective practice to heal from undesired ways of being and grow into more spiritually aligned and fulfilled people. Our goal in this Dunya is to continuously purify our nafs to attain Jannah in the Akhira.</p>
+      <%= link_to "Learn More", "/about", class: "about-button" %>
+    </div>
   </div>
-
-  <div class="why-hikma-container">
-    <h2>Is Hikma right for you?</h2>
-    <p>We believe in the power of reflective practice to heal from undesired ways of being and grow into more spiritually aligned and fulfilled people. Our goal in this Dunya is to continuously purify our nafs to attain Jannah in the Akhira.</p>
-    <%= link_to "Learn More", "/about", class: "about-button" %>
-  </div>
-
 </div>
+
 
 </div>
 
