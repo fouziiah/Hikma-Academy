@@ -82,3 +82,19 @@ button:hover {
     padding: 5.6px 20px;
     border-radius: 50px;
 }
+
+@media only screen and (max-width: 768px) {
+    .nav-links li {
+        display: block;
+        padding: 10px 0;
+    }
+    
+    .nav-links li .custom-link {
+        display: block;
+        padding: 10px 20px;
+    }
+    
+    .logo {
+        width: 150px;
+    }
+}
