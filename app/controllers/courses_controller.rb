@@ -12,18 +12,18 @@ class CoursesController < ApplicationController
 
   def show
     Stripe.api_key = ENV['STRIPE_SECRET_KEY']
-    unless current_user.nil?
-      current_user.set_payment_processor(:stripe)
-      current_user.payment_processor.pay_customer
+    return if current_user.nil?
 
-      @checkout_session = current_user
-                          .payment_processor
-                          .checkout(
-                            mode: @course.recurring? ? 'subscription' : 'payment',
-                            line_items: @course.product.stripe_price_id,
-                            success_url: students_url
-                          )
-    end 
+    current_user.set_payment_processor(:stripe)
+    current_user.payment_processor.pay_customer
+
+    @checkout_session = current_user
+                        .payment_processor
+                        .checkout(
+                          mode: @course.recurring? ? 'subscription' : 'payment',
+                          line_items: @course.product.stripe_price_id,
+                          success_url: students_url
+                        )
   end
 
   def new
