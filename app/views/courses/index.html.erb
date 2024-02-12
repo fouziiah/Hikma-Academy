@@ -28,7 +28,9 @@
   <% end %>
 </div>
 
-<h1 class = "welcome-courses">Our previous courses...</h1>
+<% if @courses.any?(&:archived?) %>
+  <h1 class = "welcome-courses">Our previous courses...</h1>
+<% end %>
 
 <div id="archived-courses", class="course-container">
   <% @courses.select(&:archived?).sort_by(&:name).each do |course| %>

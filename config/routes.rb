@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :courses
 
   get 'checkout', to: 'checkouts#show'
-  get 'checkout/success', to: 'checkouts#success'
+  get 'checkout/success', to: 'courses#success'
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
