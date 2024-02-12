@@ -12,6 +12,7 @@ class CoursesController < ApplicationController
   # GET /courses/1 or /courses/1.json
 
   def show
+    Stripe.api_key = ENV['STRIPE_SECRET_KEY']
     return if current_user.nil?
 
     current_user.set_payment_processor(:stripe)

@@ -95,6 +95,7 @@ ActiveRecord::Schema[7.1].define(version: 20_240_206_193_325) do
 
   create_table 'courses', force: :cascade do |t|
     t.string 'name'
+    t.string 'teacher'
     t.text 'description'
     t.string 'capacity'
     t.date 'start_date'

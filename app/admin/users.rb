@@ -15,6 +15,19 @@ ActiveAdmin.register User do
     actions
   end
 
+  form do |f|
+    f.inputs "User Details" do
+      f.input :first_name
+      f.input :last_name
+      f.input :username
+      f.input :phone
+      f.input :email
+      f.input :role_id, as: :select, collection: Role.where(name: ['student', 'teacher']).pluck(:name, :id)
+    end
+    f.actions
+  end
+  
+
   remove_filter :enrollments
   remove_filter :children
   remove_filter :courses
@@ -27,4 +40,8 @@ ActiveAdmin.register User do
   remove_filter :image_attachment
   remove_filter :image_blob
   remove_filter :payments
+
+
+
+  actions :all, except: [:destroy]
 end
