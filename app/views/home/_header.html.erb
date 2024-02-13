@@ -19,11 +19,11 @@
 
 
     <% if user_signed_in? && current_user.role == Role.find_by(name: 'teacher') %>
-      <li><a href="<%= new_admin_user_session_path %>" class='custom-link' target='_blank'>Admin</a></li>
+      <li><a href="<%= new_admin_user_session_path %>" class='custom-link' target= '_blank'>Admin</a></li>
     <% elsif user_signed_in? && current_user.role == Role.find_by(name: 'student') %>
       <li><a href="<%= cart_path %>"><img class="cart" src="<%= asset_path('cart.png') %>" alt="cart"></a></li>
     <% end %>
-    <li><%= link_to 'Donate', 'https://donorbox.org/support-hikma-academy', class: "donate-button", target:'_blank' %></li>
+    <li><%= link_to 'Donate', 'https://donorbox.org/support-hikma-academy', class: "donate-button", target: '_blank' %></li>
 
     <% if user_signed_in? %>
       <li><%= button_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
