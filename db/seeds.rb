@@ -14,10 +14,10 @@
 # Create the student role
 
 
-# if Rails.env.development?
-#   AdminUser.create!(email: 'admin@example.com', password: 'password',
-#                     password_confirmation: 'password')
-# end
+if Rails.env.development?
+  AdminUser.create!(email: 'admin@example.com', password: 'password',
+                    password_confirmation: 'password')
+end
 
 # Create footer content
 TextContent.find_or_create_by(location: 'footer_address', title: 'Footer Address') do |content|
