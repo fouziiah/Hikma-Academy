@@ -12,7 +12,7 @@ module HikmaAcademy
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
-    config.action_mailer.default_url_options = { host: 'http://http://localhost:3000' }
+    config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.

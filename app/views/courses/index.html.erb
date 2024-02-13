@@ -14,16 +14,20 @@
       <% end %>
 
       <div class="tags">
-        <span class="tag"><%= course.format %></span>
-        <span class="tag"><%= course.status %></span>
+        <span class="tag"><%= course.soon? ? 'coming soon' : course.status %></span>
+        <span class="tag"><%= course.in_person? ? 'in-person' : course.format %></span>
         <%if course.recurring?%>
-        <span class="tag">subscription</span>
+          <span class="tag">subscription</span>
         <% end %>
         
       </div>
       <hr>
       <div class="name"><%= course.name %></div>
-      <p class="p">Description: <%= course.description %></p>
+      <% unless course.description === '' %>
+        <p class="p">Description: <%= course.description %></p>
+      <% else %>
+        <p class='p'>There is no description for this course</p>
+      <% end %>
     </div>
   <% end %>
 </div>
@@ -42,12 +46,19 @@
       <% end %>
 
       <div class="tags">
-        <span class="tag"><%= course.format %></span>
-        <span class="tag"><%= course.status %></span>
+        <span class="tag"><%= course.soon? ? 'coming soon' : course.status %></span>
+        <span class="tag"><%= course.in_person? ? 'in-person' : course.format %></span>
+        <%if course.recurring?%>
+          <span class="tag">subscription</span>
+        <% end %>
       </div>
       <hr>
       <div class="name"><%= course.name %></div>
-      <p class="p">Description: <%= course.description %></p>
+      <% unless course.description === '' %>
+        <p class="p">Description: <%= course.description %></p>
+      <% else %>
+        <p class='p'>There is no description for this course</p>
+      <% end %>
     </div>
   <% end %>
 </div>

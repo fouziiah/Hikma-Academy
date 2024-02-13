@@ -8,7 +8,6 @@ ActiveAdmin.setup do |config|
   #
   config.site_title = 'Hikma Academy'
 
-
   config.comments = false
 
   # Set the link url for the title. For example, to take
