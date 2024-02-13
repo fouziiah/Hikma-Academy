@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  before_validation :set_default_role, on: :create
   belongs_to :role, optional: true
   has_many :enrollments
   has_many :children
@@ -62,5 +63,9 @@ class User < ApplicationRecord
 
   def enrolled_in?(course)
     courses.exists?(id: course.id)
+  end
+
+  def set_default_role
+    self.role ||= Role.find_by(name: 'student')
   end
 end

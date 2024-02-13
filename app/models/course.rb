@@ -15,6 +15,6 @@ class Course < ApplicationRecord
 
   enum status: { open: 0, closed: 1, soon: 2, archived: 3 }
   enum course_type: { regular: 0, workshop: 1, retreat: 3 }
-  enum format: { online: 0, in_person: 1, hybrid: 2 }
+  enum format: { online: 1, in_person: 0, hybrid: 2 }
   enum payment_type: { one_time: 0, recurring: 1 }
 end
