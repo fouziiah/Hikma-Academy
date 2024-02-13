@@ -8,49 +8,66 @@
     <%= course.name %>
   </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= course.description %>
-  </p>
+  <% unless course.description === '' %>
+    <p>
+      <strong>Description:</strong>
+      <%= course.description %>
+    </p>
+  <% end %>
 
   <p>
-    <strong>Status:</strong>
+  <strong>Status:</strong>
+  <% unless course.archived? || course.closed? %>
+    <% if course.soon? %>
+      <%= 'coming soon' %>
+      <% if course.start_date <= Date.today %>
+        <% course.open! %>
+      <% end %>
+    <% elsif Date.today < course.start_date %>
+      <%= 'coming soon' %>
+      <% course.soon! %>
+    <% else %>
+      <%= course.status %>
+    <% end %>
+  <% else %>
     <%= course.status %>
-  </p>
+  <% end %>
+</p>
 
+  <% if course.capacity.to_i > 0 %>
   <p>
     <strong>Capacity:</strong>
     <%= course.capacity %>
   </p>
+  <% end %>
 
   <p>
     <strong>Start date:</strong>
-    <%= course.start_date %>
+    <%= course.start_date.strftime("%A, %b %y") %>
+    (<%= course.start_date.strftime("%m/%d/%y") %>)
   </p>
 
   <p>
     <strong>End date:</strong>
-    <%= course.end_date %>
-  </p>
-
-  <p>
-    <strong>Location:</strong>
-    <%= course.location %>
-  </p>
-
-  <p>
-    <strong>Type:</strong>
-    <%= course.course_type %>
+    <%= course.end_date.strftime("%A, %b %y") %>
+    (<%= course.end_date.strftime("%m/%d/%y") %>)
   </p>
 
   <p>
     <strong>Format:</strong>
-    <%= course.format %>
+    <%= course.in_person? ? 'in-person' : course.format %>
   </p>
+
+  <% if course.in_person? || course.hybrid?%>
+    <p>
+      <strong>Location:</strong>
+      <%= course.location %>
+    </p>
+  <% end %>
 
   <p>
     <strong>Payment type:</strong>
-    <%= course.payment_type %>
+    <%= course.payment_type?  ? 'one-time' : course.payment_type %>
   </p>
 
   <p>

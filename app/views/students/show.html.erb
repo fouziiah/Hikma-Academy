@@ -29,7 +29,7 @@
         </a>
       </li>
     </ul>
-  <% elsif @course.format == 'location' %>
+  <% elsif !@course.online? %>
     <% if @course.location.present? %>
       <p class="course-location"><strong>Location:</strong> <%= @course.location %></p>
     <% else %>

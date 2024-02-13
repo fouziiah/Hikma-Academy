@@ -23,11 +23,6 @@
     </div>
 
     <div class="edit-add">
-      <%= form.label :status, style: "display: block" %>
-      <%= form.select :status, Course.statuses.keys %>
-    </div>
-
-    <div class="edit-add">
       <%= form.label :capacity, style: "display: block" %>
       <%= form.text_field :capacity, placeholder: "Course capacity" %>
     </div>
@@ -43,19 +38,16 @@
     </div>
 
     <div class="edit-add">
-      <%= form.label :location, style: "display: block" %>
-      <%= form.text_field :location , placeholder: "Course location" %>
-    </div>
-
-    <div class="edit-add">
-      <%= form.label :course_type, style: "display: block" %>
-      <%= form.select :course_type, Course.course_types.keys %>
-    </div>
-
-    <div class="edit-add">
       <%= form.label :format, style: "display: block" %>
       <%= form.select :format, Course.formats.keys %>
     </div>
+
+    <% unless course.online? %>
+      <div class="edit-add">
+        <%= form.label :location, style: "display: block" %>
+        <%= form.text_field :location , placeholder: "Course location" %>
+      </div>
+    <% end %>
 
     <% if action_name != 'edit' %>
       <!-- Render payment_type field only in the new action -->
