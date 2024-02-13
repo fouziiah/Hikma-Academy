@@ -13,7 +13,6 @@
 # db/seeds.rb
 # Create the student role
 
-
 # if Rails.env.development?
 #   AdminUser.create!(email: 'admin@example.com', password: 'password',
 #                     password_confirmation: 'password')
@@ -88,11 +87,10 @@ TextContent.find_or_create_by(location: 'teacher_3_bio', title: 'Teacher 3 Bio')
   content.body = 'Roun Said is a mental health therapist, doctoral candidate, and a community-engaged researcher. She received her bachelor’s degree in Human Development and Family Science from The Ohio State University and her master’s degree in Clinical Mental Health Counseling from University of Dayton. Currently, she is working on her PhD in Family Social Science at the University of Minnesota and is pursuing Islamic knowledge as a student through Jannah Institute and Ribaat Academic Institute. As a Level 1 trained TIIP (Traditional Islamically Integrated Psychotherapy) Therapist with additional trainings in Cognitive Behavioral Therapy, Acceptance and Commitment Therapy, and Dialectical Behavioral Therapy, Roun’s work blends Islamic practices and Western psychology into a holistic, strengths-based approach.'
 end
 
-
 # db/seeds.rb
 
 # Role names
-roles = ['student', 'teacher']
+roles = %w[student teacher]
 
 roles.each do |role_name|
   Role.find_or_create_by(name: role_name)
