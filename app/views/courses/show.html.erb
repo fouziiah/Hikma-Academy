@@ -38,8 +38,8 @@
     <%= form_with(url: carts_add_path) do |f| %>
       <%= f.hidden_field :id, value: @course.product.id %>
       <%= f.number_field :quantity, value: 1, min: 1, type: :hidden %>
-      <%= f.submit "Buy Course", class: "generic-button" %>
-      <%= link_to "Back", courses_path, class: "generic-button"%>
+      <%= f.submit "Buy Course", class: "buy-course-button" %>
+      <%= link_to "Back", courses_path, class: "back-button"%>
     <% end %>
   <% end %>
 </div>
