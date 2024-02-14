@@ -106,19 +106,19 @@
 
 @media only screen and (max-width: 768px) {
     .dash-cont {
-        flex-direction: column; /* Stack items vertically */
+        flex-direction: column; 
     }
 
     .aside {
-        width: 100%; /* Take full width */
+        width: 100%; 
     }
 
     .main-content {
-        width: 100%; /* Take full width */
+        width: 100%; 
     }
 
     .courses-cont {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust for smaller screens */
-        gap: 10px; /* Reduce gap between columns */
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+        gap: 10px; 
     }
 }
