@@ -1,5 +1,5 @@
 <% if user_signed_in? && current_user.role == Role.find_by(name: 'teacher') %>
-  <%= link_to "Add new course", new_course_path, class: "generic-button" %>
+  <%= link_to "Add new course", new_course_path, class: "add-course-button" %>
 <% end %>
 
 <h1 class="welcome-courses"> Welcome to our courses</h1>
@@ -14,20 +14,16 @@
       <% end %>
 
       <div class="tags">
-        <span class="tag"><%= course.soon? ? 'coming soon' : course.status %></span>
-        <span class="tag"><%= course.in_person? ? 'in-person' : course.format %></span>
+        <span class="tag"><%= course.format %></span>
+        <span class="tag"><%= course.status %></span>
         <%if course.recurring?%>
-          <span class="tag">subscription</span>
+        <span class="tag">subscription</span>
         <% end %>
         
       </div>
       <hr>
       <div class="name"><%= course.name %></div>
-      <% unless course.description === '' %>
-        <p class="p">Description: <%= course.description %></p>
-      <% else %>
-        <p class='p'>There is no description for this course</p>
-      <% end %>
+      <p class="p">Description: <%= course.description %></p>
     </div>
   <% end %>
 </div>
@@ -46,19 +42,12 @@
       <% end %>
 
       <div class="tags">
-        <span class="tag"><%= course.soon? ? 'coming soon' : course.status %></span>
-        <span class="tag"><%= course.in_person? ? 'in-person' : course.format %></span>
-        <%if course.recurring?%>
-          <span class="tag">subscription</span>
-        <% end %>
+        <span class="tag"><%= course.format %></span>
+        <span class="tag"><%= course.status %></span>
       </div>
       <hr>
       <div class="name"><%= course.name %></div>
-      <% unless course.description === '' %>
-        <p class="p">Description: <%= course.description %></p>
-      <% else %>
-        <p class='p'>There is no description for this course</p>
-      <% end %>
+      <p class="p">Description: <%= course.description %></p>
     </div>
   <% end %>
 </div>

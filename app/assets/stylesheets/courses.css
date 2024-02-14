@@ -118,6 +118,7 @@ body.course-page {
   gap: 5px;
   margin: 10px;
 }
+<<<<<<< Updated upstream
 
 /* .......................................Course show page/GuestUser......................................... */
 .cs{
@@ -179,3 +180,58 @@ body.course-page {
 }
 
 
+=======
+.add-course-button {
+  background-color: white;
+  border: solid 2px rgba(190, 30, 30, 1);
+  color: #000000;
+  cursor: pointer; 
+  padding: 8px 20px;
+  border-radius: 50px;
+  position: absolute;
+  top: 10em;
+  left: 40em;
+  margin-top: 6px;
+}
+
+.back-to-button{
+  background-color: white;
+  border: solid 2px rgba(190, 30, 30, 1);
+  color: #000000;
+  cursor: pointer; 
+  padding: 8px 20px;
+  border-radius: 50px;
+  position: absolute;
+  top: 11em;
+  margin-left: 7px;
+}
+
+.buy-course-button{
+  background-color: white;
+  border: solid 2px rgba(190, 30, 30, 1);
+  color: #000000;
+  cursor: pointer; 
+  padding: 5px 25px;
+  border-radius: 50px;
+  position: absolute;
+  left: 53%;
+  bottom:30.2em;
+  transform: translateX(-50%);
+}
+
+
+.back-button{
+  background-color: white;
+  border: solid 2px rgba(190, 30, 30, 1);
+  color: #000000;
+  cursor: pointer; 
+  padding: 5px 25px;
+  border-radius: 50px;
+  position: absolute;
+  left: 53%;
+  bottom:25em;
+  transform: translateX(-180%);
+  
+}
+
+>>>>>>> Stashed changes
