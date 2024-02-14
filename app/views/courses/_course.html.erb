@@ -1,7 +1,11 @@
 <div id="<%= dom_id course %>" class="cs">
+  
+<div class="course_image-cont">
   <div style="flex: 1;">
     <%= image_tag course.image, class: "img" %>
   </div>
+  </div>
+  <div class="text-course-container">
   <div style="flex: 2; text-align: left;">
     <p>
       <strong>Name:</strong>
@@ -11,7 +15,7 @@
     <% unless course.description === '' %>
       <p>
         <strong>Description:</strong>
-        <%= course.description %>
+        <span class="course-description"><%= course.description %></span>
       </p>
     <% end %>
 
@@ -79,4 +83,5 @@
       <%= number_to_currency(course.price) %>
     </p>
   </div>
+</div>
 </div>
