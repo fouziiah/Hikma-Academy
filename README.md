@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to the Hikma Academy Website Revamp Project! Hikma Academy is a platform committed to fostering a deeper understanding of spiritual teachings, providing individuals with the tools to embark on a transformative journey towards enlightenment and personal growth.
+Hikma Academy is a platform committed to fostering a deeper understanding of spiritual teachings, providing individuals with the tools to embark on a transformative journey towards enlightenment and personal growth.
 
 ## Project Scope
 
@@ -15,6 +15,7 @@ This project aimed to revamp the existing website for Hikma Academy, elevating i
 - Stripe API
 - Active Admin
 - PostgreSQL
+- Heroku
 - HTML5
 - CSS3
 
