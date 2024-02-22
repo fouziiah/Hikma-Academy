@@ -71,7 +71,7 @@ Create a `.env` file in the root directory of your project and add the necessary
 Replace `your_stripe_publishable_key` and `your_stripe_secret_key` with your actual Stripe API keys.
 
 6. **Start the Server:**
-This will start the Rails server locally.
+- This will start the Rails server locally.
 
 7. **Access the Application:**
-Open your web browser and navigate to `http://localhost:3000` to access the Hikma Academy website.
+- Open your web browser and navigate to `http://localhost:3000` to access the Hikma Academy website.
