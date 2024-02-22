@@ -65,8 +65,8 @@ This will create the necessary databases and run migrations to set up the databa
 5. **Set Environment Variables:**
 Create a `.env` file in the root directory of your project and add the necessary environment variables. For example:
 
-STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
-STRIPE_SECRET_KEY=your_stripe_secret_key
+- STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
+- STRIPE_SECRET_KEY=your_stripe_secret_key
 
 Replace `your_stripe_publishable_key` and `your_stripe_secret_key` with your actual Stripe API keys.
 
